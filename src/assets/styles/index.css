@@ -1,0 +1,42 @@
+@import './fonts.css';
+
+:root {
+  --font-family: 'Montserrat';
+
+  --background-primary: #09090b;
+  --background-secondary: #18181b;
+  --color-foreground: #f4f4f5;
+  --color-muted: #a1a1aa;
+  --color-accent: #27272a;
+  --color-border: #e3e4f21f;
+  --color-red: #ff6467;
+  --color-yellow: #ff9a13;
+  --color-green: #319e6a;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: 14px;
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-height: 100vh;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* @media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+} */
