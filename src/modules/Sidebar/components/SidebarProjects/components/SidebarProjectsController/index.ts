@@ -1,0 +1,1 @@
+export { SidebarProjectsController } from './SidebarProjectsController';

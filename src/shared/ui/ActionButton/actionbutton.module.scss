@@ -1,0 +1,34 @@
+.actionButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-15);
+}
+
+.xsActionButton {
+  height: var(--size-xs);
+  width: var(--size-xs);
+  border-radius: var(--rounded-sm);
+}
+.smActionButton {
+  height: var(--size-sm);
+  width: var(--size-sm);
+  border-radius: var(--rounded-sm);
+}
+.mdActionButton {
+  height: var(--size-md);
+  width: var(--size-md);
+  border-radius: var(--rounded-md);
+}
+.lgActionButton {
+  height: var(--size-lg);
+  width: var(--size-lg);
+  border-radius: var(--rounded-md);
+}
+
+.ghostActionButton {
+  &:hover,
+  &:focus-visible {
+    background-color: var(--background-secondary);
+  }
+}

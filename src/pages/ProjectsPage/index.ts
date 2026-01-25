@@ -1,1 +1,1 @@
-export { ProjectsPage as default } from './components/ProjectsPage'
+export { ProjectsPage as default } from './ProjectsPage'

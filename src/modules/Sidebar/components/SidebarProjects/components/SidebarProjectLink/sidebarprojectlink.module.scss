@@ -1,0 +1,37 @@
+.sidebarProjectLinkWrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  height: var(--size-lg);
+  padding-inline: var(--space-sm);
+  transition: var(--transition-15);
+  border-radius: var(--rounded-md);
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--muted);
+  }
+
+  &:hover .sidebarProjectButton,
+  &:focus-visible .sidebarProjectButton {
+    display: flex;
+  }
+}
+.sidebarProjectLink {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+
+  & span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+.sidebarProjectButton {
+  display: none;
+  flex-shrink: 0;
+}

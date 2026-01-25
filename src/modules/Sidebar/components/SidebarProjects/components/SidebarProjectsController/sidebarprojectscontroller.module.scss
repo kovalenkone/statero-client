@@ -1,0 +1,36 @@
+.sidebarProjectsController {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: var(--space-sm);
+  height: var(--size-lg);
+  border-radius: var(--rounded-md);
+  transition: var(--transition-15);
+  margin-bottom: var(--space-xs);
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--muted);
+  }
+
+  &:hover .sidebarProjectsControllerActions,
+  &:focus-visible .sidebarProjectsControllerActions {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+.sidebarProjectsControllerLink {
+  display: flex;
+  align-items: center;
+  color: var(--muted-foreground);
+  width: 100%;
+  height: 100%;
+  font-size: var(--fz-sm);
+}
+.sidebarProjectsControllerActions {
+  display: flex;
+  gap: var(--space-xs);
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition-15);
+}

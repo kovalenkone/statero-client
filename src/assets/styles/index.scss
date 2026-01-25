@@ -1,0 +1,81 @@
+@use './reset';
+@use './fonts';
+
+:root {
+  --font-family: 'Montserrat', sans-serif;
+
+  --primary: #e5e5e5;
+  --secondary: #27272a;
+  --background: #09090b;
+  --background-secondary: #18181b;
+  --foreground: #f4f4f5;
+  --foreground-secondary: #09090b;
+  --muted: #27272a;
+  --muted-foreground: #a1a1aa;
+  --accent: #404040;
+  --accent-foreground: #fafafa;
+  --border: #27272a;
+  --input: #27272a;
+  --ring: #27272a;
+
+  --blue: #9dc7f1;
+  --blue-muted: #9dc7f13b;
+  --violet: #cbbbf2;
+  --violet-muted: #cbbbf23b;
+  --orange: #fcb5aa;
+  --orange-muted: #fcb5aa3b;
+  --green: #91d4a8;
+  --green-muted: #91d4a83b;
+  --yellow: #e9be74;
+  --yellow-muted: #e9be743b;
+  --grey: #bfbfc3;
+  --grey-muted: #bfbfc33b;
+
+  --size-xs: 20px;
+  --size-sm: 24px;
+  --size-md: 28px;
+  --size-lg: 32px;
+
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 12px;
+  --space-lg: 16px;
+  --space-xl: 24px;
+
+  --rounded-sm: 4px;
+  --rounded-md: 6px;
+  --rounded-lg: 8px;
+
+  --fz-sm: 12px;
+  --fz-md: 14px;
+  --fz-lg: 16px;
+
+  --transition-15: 0.15s ease-in-out;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: 14px;
+  margin: 0;
+  height: 100vh;
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* @media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+} */

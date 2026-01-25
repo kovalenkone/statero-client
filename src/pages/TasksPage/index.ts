@@ -1,1 +1,1 @@
-export { TasksPage as default } from './components/TasksPage'
+export { TasksPage as default } from './TasksPage'

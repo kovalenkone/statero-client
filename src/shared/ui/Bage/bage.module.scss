@@ -1,0 +1,91 @@
+.bage {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: var(--space-md);
+  font-weight: 500;
+
+  &.square {
+    justify-content: center;
+  }
+}
+
+.xsBage {
+  height: var(--size-xs);
+  border-radius: var(--rounded-sm);
+  font-size: var(--fz-sm);
+
+  &:not(.square) {
+    padding-inline: var(--space-xs);
+  }
+
+  &.square {
+    width: var(--size-xs);
+  }
+}
+
+.smBage {
+  height: var(--size-sm);
+  border-radius: var(--rounded-sm);
+  font-size: var(--fz-sm);
+
+  &:not(.square) {
+    padding-inline: var(--space-xs);
+  }
+
+  &.square {
+    width: var(--size-sm);
+  }
+}
+
+.mdBage {
+  height: var(--size-md);
+  border-radius: var(--rounded-md);
+  font-size: var(--fz-md);
+
+  &:not(.square) {
+    padding-inline: var(--space-sm);
+  }
+
+  &.square {
+    width: var(--size-md);
+  }
+}
+.lgBage {
+  height: var(--size-lg);
+  border-radius: var(--rounded-md);
+  font-size: var(--fz-md);
+
+  &:not(.square) {
+    padding-inline: var(--space-md);
+  }
+
+  &.square {
+    width: var(--size-lg);
+  }
+}
+
+.blueBage {
+  background-color: var(--blue-muted);
+  color: var(--blue);
+}
+.violetBage {
+  background-color: var(--violet-muted);
+  color: var(--violet);
+}
+.orangeBage {
+  background-color: var(--orange-muted);
+  color: var(--orange);
+}
+.greenBage {
+  background-color: var(--green-muted);
+  color: var(--green);
+}
+.yellowBage {
+  background-color: var(--yellow-muted);
+  color: var(--yellow);
+}
+.greyBage {
+  background-color: var(--grey-muted);
+  color: var(--grey);
+}

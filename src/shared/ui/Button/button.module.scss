@@ -1,0 +1,42 @@
+.button {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  font-weight: 500;
+}
+
+.smButton {
+  height: var(--size-sm);
+  padding-inline: var(--space-xs);
+  border-radius: var(--rounded-sm);
+  font-size: var(--fz-sm);
+}
+.mdButton {
+  height: var(--size-md);
+  padding-inline: var(--space-sm);
+  border-radius: var(--rounded-md);
+  font-size: var(--fz-md);
+}
+.lgButton {
+  height: var(--size-lg);
+  padding-inline: var(--space-md);
+  border-radius: var(--rounded-md);
+  font-size: var(--fz-md);
+}
+
+.primaryButton {
+  background-color: var(--primary);
+  color: var(--foreground-secondary);
+}
+.secondaryButton {
+  background-color: var(--secondary);
+}
+.ghostButton {
+}
+.outlineButton {
+  border: 1px solid var(--border);
+}
+
+.stretchButton {
+  width: 100%;
+}

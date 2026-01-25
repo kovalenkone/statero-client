@@ -1,0 +1,9 @@
+.sidebarFooterNavigation {
+  margin-top: auto;
+  padding: var(--space-sm);
+}
+.sidebarFooterNavigationList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}

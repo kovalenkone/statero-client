@@ -1,0 +1,18 @@
+.sidebarLink {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding-inline: var(--space-sm);
+  height: var(--size-lg);
+  transition: var(--transition-15);
+  border-radius: var(--rounded-md);
+  font-weight: 500;
+}
+.sidebarLink:hover,
+.sidebarLink:focus-visible {
+  background-color: var(--muted);
+}
+.sidebarLink.active {
+  background-color: var(--primary);
+  color: var(--foreground-secondary);
+}
