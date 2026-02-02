@@ -1,90 +1,86 @@
-import type { TMenu } from '@/shared/types/menu.type'
+import clsx from 'clsx'
 import { DropdownMenu } from 'radix-ui'
-import type { PropsWithChildren } from 'react'
-import { Link } from 'react-router-dom'
+import type { ComponentProps } from 'react'
 import styles from './menu.module.scss'
 
-interface IMenuProps {
-  menu: TMenu
+const Menu = ({ ...props }: ComponentProps<typeof DropdownMenu.Root>) => {
+  return <DropdownMenu.Root {...props} />
 }
 
-const renderItems = (menu: TMenu) => {
-  return menu.map((item, index) => {
-    if (item.type === 'separator') {
-      return (
-        <DropdownMenu.Separator className={styles.menuSeparator} key={index} />
-      )
-    }
-
-    if (item.type === 'label') {
-      return (
-        <DropdownMenu.Label className={styles.menuLabel} key={index}>
-          {item.label}
-        </DropdownMenu.Label>
-      )
-    }
-
-    const Icon = 'icon' in item && item.icon
-
-    if (item.type === 'submenu') {
-      return (
-        <DropdownMenu.Sub key={index}>
-          <DropdownMenu.SubTrigger>
-            {Icon && <Icon />}
-            {item.label}
-          </DropdownMenu.SubTrigger>
-          <DropdownMenu.SubContent>
-            {renderItems(item.items)}
-          </DropdownMenu.SubContent>
-        </DropdownMenu.Sub>
-      )
-    }
-
-    if (item.href) {
-      return (
-        <DropdownMenu.Item
-          asChild
-          key={index}
-          disabled={item.disabled}
-          className={styles.menuItem}
-        >
-          <Link to={item.href}>
-            {Icon && <Icon size={16} />}
-            {item.label}
-          </Link>
-        </DropdownMenu.Item>
-      )
-    }
-
-    return (
-      <DropdownMenu.Item
-        key={index}
-        disabled={item.disabled}
-        onSelect={item.onClick}
-        className={styles.menuItem}
-      >
-        {Icon && <Icon size={16} />}
-        {item.label}
-      </DropdownMenu.Item>
-    )
-  })
+const MenuTrigger = ({
+  ...props
+}: ComponentProps<typeof DropdownMenu.Trigger>) => {
+  return <DropdownMenu.Trigger {...props} />
 }
 
-const Menu = ({ menu, children }: PropsWithChildren<IMenuProps>) => {
+const MenuContent = ({
+  className,
+  align = 'start',
+  sideOffset = 4,
+  ...props
+}: ComponentProps<typeof DropdownMenu.Content>) => {
   return (
-    <DropdownMenu.Root>
-      <DropdownMenu.Trigger asChild>{children}</DropdownMenu.Trigger>
-      <DropdownMenu.Portal>
-        <DropdownMenu.Content
-          align='start'
-          sideOffset={4}
-          className={styles.menuContent}
-        >
-          {renderItems(menu)}
-        </DropdownMenu.Content>
-      </DropdownMenu.Portal>
-    </DropdownMenu.Root>
+    <DropdownMenu.Portal>
+      <DropdownMenu.Content
+        onCloseAutoFocus={e => e.preventDefault()}
+        sideOffset={sideOffset}
+        align={align}
+        className={clsx(styles.menuContent, className)}
+        {...props}
+      />
+    </DropdownMenu.Portal>
   )
 }
+
+const MenuGroup = ({ ...props }: ComponentProps<typeof DropdownMenu.Group>) => {
+  return <DropdownMenu.Group {...props} />
+}
+
+interface IMenuItemProps extends ComponentProps<typeof DropdownMenu.Item> {
+  variant?: 'default' | 'danger'
+}
+const MenuItem = ({
+  variant = 'default',
+  className,
+  ...props
+}: IMenuItemProps) => {
+  return (
+    <DropdownMenu.Item
+      className={clsx(styles.menuItem, styles[`${variant}MenuItem`], className)}
+      {...props}
+    />
+  )
+}
+
+const MenuLabel = ({
+  className,
+  ...props
+}: ComponentProps<typeof DropdownMenu.Label>) => {
+  return (
+    <DropdownMenu.Label
+      className={clsx(styles.menuLabel, className)}
+      {...props}
+    />
+  )
+}
+
+const MenuSeparator = ({
+  className,
+  ...props
+}: ComponentProps<typeof DropdownMenu.Separator>) => {
+  return (
+    <DropdownMenu.Separator
+      className={clsx(styles.menuSeparator, className)}
+      {...props}
+    />
+  )
+}
+
+Menu.Trigger = MenuTrigger
+Menu.Content = MenuContent
+Menu.Group = MenuGroup
+Menu.Item = MenuItem
+Menu.Label = MenuLabel
+Menu.Separator = MenuSeparator
 
 export { Menu }

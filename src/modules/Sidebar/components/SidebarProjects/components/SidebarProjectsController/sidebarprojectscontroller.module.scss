@@ -2,11 +2,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-inline: var(--space-sm);
-  height: var(--size-lg);
+  padding-inline: 8px;
+  height: 32px;
   border-radius: var(--rounded-md);
   transition: var(--transition-15);
-  margin-bottom: var(--space-xs);
+  margin-bottom: 4px;
 
   &:hover,
   &:focus-visible {
@@ -29,7 +29,7 @@
 }
 .sidebarProjectsControllerActions {
   display: flex;
-  gap: var(--space-xs);
+  gap: 4px;
   opacity: 0;
   visibility: hidden;
   transition: var(--transition-15);

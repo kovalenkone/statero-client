@@ -1,9 +1,9 @@
 .sidebarLink {
   display: flex;
   align-items: center;
-  gap: var(--space-sm);
-  padding-inline: var(--space-sm);
-  height: var(--size-lg);
+  gap: 8px;
+  padding-inline: 8px;
+  height: 32px;
   transition: var(--transition-15);
   border-radius: var(--rounded-md);
   // font-weight: 500;

@@ -1,5 +1,5 @@
 .menuContent {
-  padding: var(--space-xs);
+  padding: 4px;
   background-color: #1b1b1b;
   border: 1px solid var(--border);
   border-radius: var(--rounded-lg);
@@ -33,12 +33,17 @@
 .menuItem {
   display: flex;
   align-items: center;
-  gap: var(--space-sm);
+  gap: 8px;
   height: 28px;
-  padding-inline: var(--space-sm);
+  padding-inline: 8px;
   border-radius: var(--rounded-md);
   transition: var(--transition-15);
   cursor: pointer;
+
+  & svg {
+    width: 16px;
+    height: 16px;
+  }
 
   &:hover,
   &:focus-visible {
@@ -47,9 +52,18 @@
     outline: none;
   }
 }
+
+.dangerMenuItem {
+  color: var(--red);
+}
+
 .menuSeparator {
   height: 1px;
-  margin-block: var(--space-xs);
+  margin-block: 4px;
   background-color: var(--border);
-  margin-inline: var(--space-md);
+  margin-inline: 12px;
+}
+
+.menuLabel {
+  padding: 8px;
 }

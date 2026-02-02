@@ -1,9 +1,9 @@
 .sidebarProjectLinkWrapper {
   display: flex;
   align-items: center;
-  gap: var(--space-sm);
-  height: var(--size-lg);
-  padding-inline: var(--space-sm);
+  gap: 8px;
+  height: 32px;
+  padding-inline: 8px;
   transition: var(--transition-15);
   border-radius: var(--rounded-md);
 
@@ -20,7 +20,7 @@
 .sidebarProjectLink {
   display: flex;
   align-items: center;
-  gap: var(--space-sm);
+  gap: 8px;
   flex: 1;
   height: 100%;
   overflow: hidden;

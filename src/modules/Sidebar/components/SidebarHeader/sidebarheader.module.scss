@@ -1,4 +1,15 @@
 .sidebarHeader {
-  padding: var(--space-sm);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
   border-bottom: 1px solid var(--border);
+}
+.sidebarHeaderLogo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
 }

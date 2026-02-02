@@ -1,25 +1,25 @@
 .button {
   display: flex;
   align-items: center;
-  gap: var(--space-md);
+  gap: 12px;
   // font-weight: 500;
 }
 
 .smButton {
-  height: var(--size-sm);
-  padding-inline: var(--space-xs);
+  height: 24px;
+  padding-inline: 4px;
   border-radius: var(--rounded-sm);
   font-size: var(--fz-sm);
 }
 .mdButton {
-  height: var(--size-md);
-  padding-inline: var(--space-sm);
+  height: 28px;
+  padding-inline: 8px;
   border-radius: var(--rounded-md);
   font-size: var(--fz-md);
 }
 .lgButton {
-  height: var(--size-lg);
-  padding-inline: var(--space-md);
+  height: 32px;
+  padding-inline: 12px;
   border-radius: var(--rounded-md);
   font-size: var(--fz-md);
 }

@@ -1,9 +1,11 @@
 .topbar {
   display: flex;
-  padding: var(--space-sm);
+  padding: 8px 16px;
   background-color: var(--background-secondary);
   border-bottom: 1px solid var(--border);
 }
 .topbarRight {
   margin-left: auto;
+  display: flex;
+  gap: 8px;
 }

@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   flex-shrink: 0;
-  gap: var(--space-md);
+  gap: 12px;
   // font-weight: 500;
 
   &.square {
@@ -11,57 +11,57 @@
 }
 
 .xsBage {
-  height: var(--size-xs);
+  height: 20px;
   border-radius: var(--rounded-sm);
   font-size: var(--fz-sm);
 
   &:not(.square) {
-    padding-inline: var(--space-xs);
+    padding-inline: 4px;
   }
 
   &.square {
-    width: var(--size-xs);
+    width: 20px;
   }
 }
 
 .smBage {
-  height: var(--size-sm);
+  height: 24px;
   border-radius: var(--rounded-sm);
   font-size: var(--fz-sm);
 
   &:not(.square) {
-    padding-inline: var(--space-xs);
+    padding-inline: 4px;
   }
 
   &.square {
-    width: var(--size-sm);
+    width: 24px;
   }
 }
 
 .mdBage {
-  height: var(--size-md);
+  height: 28px;
   border-radius: var(--rounded-md);
   font-size: var(--fz-md);
 
   &:not(.square) {
-    padding-inline: var(--space-sm);
+    padding-inline: 8px;
   }
 
   &.square {
-    width: var(--size-md);
+    width: 28px;
   }
 }
 .lgBage {
-  height: var(--size-lg);
+  height: 32px;
   border-radius: var(--rounded-md);
   font-size: var(--fz-md);
 
   &:not(.square) {
-    padding-inline: var(--space-md);
+    padding-inline: 12px;
   }
 
   &.square {
-    width: var(--size-lg);
+    width: 32px;
   }
 }
 
