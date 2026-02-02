@@ -29,6 +29,11 @@
 .ghostActionButton {
   &:hover,
   &:focus-visible {
-    background-color: var(--background-secondary);
+    // background-color: var(--input);
+    background-color: var(--secondary);
+  }
+
+  &[data-state='open'] {
+    background-color: var(--secondary);
   }
 }

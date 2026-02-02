@@ -2,20 +2,22 @@
 @use './fonts';
 
 :root {
-  --font-family: 'Montserrat', sans-serif;
+  --font-family: 'Geist', sans-serif;
+
+  --background: #111111;
+  --background-secondary: #161616;
 
   --primary: #e5e5e5;
-  --secondary: #27272a;
-  --background: #09090b;
-  --background-secondary: #18181b;
+  --secondary: #ffffff0d;
+
   --foreground: #f4f4f5;
-  --foreground-secondary: #09090b;
-  --muted: #27272a;
-  --muted-foreground: #a1a1aa;
-  --accent: #404040;
-  --accent-foreground: #fafafa;
-  --border: #27272a;
-  --input: #27272a;
+  --foreground-secondary: #111111;
+
+  --muted: #a3a3a3;
+
+  --border: #ffffff0f;
+  // --input: #ffffff07;
+  --input: #1c1c1c;
   --ring: #27272a;
 
   --blue: #9dc7f1;
@@ -60,6 +62,9 @@ body {
   height: 100vh;
   background-color: var(--background);
   color: var(--foreground);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 button {

@@ -1,5 +1,9 @@
 .topbar {
+  display: flex;
   padding: var(--space-sm);
   background-color: var(--background-secondary);
   border-bottom: 1px solid var(--border);
+}
+.topbarRight {
+  margin-left: auto;
 }
