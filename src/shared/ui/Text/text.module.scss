@@ -1,0 +1,30 @@
+.smText {
+  font-size: 12px;
+}
+.mdText {
+  font-size: 14px;
+}
+.lgText {
+  font-size: 16px;
+}
+.xlText {
+  font-size: 20px;
+}
+.normalText {
+  font-weight: 400;
+}
+.mediumText {
+  font-weight: 500;
+}
+.boldText {
+  font-weight: 700;
+}
+.primaryText {
+  color: var(--foreground);
+}
+.secondaryText {
+  color: var(--foreground-secondary);
+}
+.mutedText {
+  color: var(--muted);
+}

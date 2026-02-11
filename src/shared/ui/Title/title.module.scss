@@ -1,0 +1,30 @@
+.smTitle {
+  font-size: 16px;
+}
+.mdTitle {
+  font-size: 20px;
+}
+.lgTitle {
+  font-size: 24px;
+}
+.xlTitle {
+  font-size: 32px;
+}
+.normalTitle {
+  font-weight: 400;
+}
+.mediumTitle {
+  font-weight: 500;
+}
+.boldTitle {
+  font-weight: 700;
+}
+.primaryTitle {
+  color: var(--foreground);
+}
+.secondaryTitle {
+  color: var(--foreground-secondary);
+}
+.mutedTitle {
+  color: var(--muted);
+}

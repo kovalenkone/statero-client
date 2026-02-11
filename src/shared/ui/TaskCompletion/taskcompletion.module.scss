@@ -1,0 +1,19 @@
+.taskCompletion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--primary);
+  border-radius: 50%;
+
+  & svg {
+    opacity: 0;
+    transition: var(--transition-15);
+  }
+
+  &:hover svg,
+  &:focus-visible svg {
+    opacity: 1;
+  }
+}

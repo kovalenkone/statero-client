@@ -1,0 +1,24 @@
+.kanbanBoard {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 320px;
+}
+.kanbanBoardHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  padding: 0 8px 0 16px;
+  border-radius: 6px;
+  background-color: var(--background-secondary);
+}
+.kanbanBoardActions {
+  display: flex;
+  gap: 4px;
+}
+.kanbanBoardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}

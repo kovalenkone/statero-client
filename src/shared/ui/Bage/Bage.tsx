@@ -3,7 +3,7 @@ import type { PropsWithChildren } from 'react'
 import styles from './bage.module.scss'
 
 interface IBageProps {
-  size?: 'xs' | 'sm' | 'md' | 'lg'
+  size?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg'
   variant?: 'blue' | 'violet' | 'orange' | 'green' | 'yellow' | 'grey'
   square?: boolean
   className?: string

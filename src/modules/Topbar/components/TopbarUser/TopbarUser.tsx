@@ -1,5 +1,6 @@
 import { Avatar } from '@/shared/ui/Avatar'
 import { Menu } from '@/shared/ui/Menu'
+import { Text } from '@/shared/ui/Text'
 import {
   CreditCardIcon,
   LogOutIcon,
@@ -23,8 +24,10 @@ const TopbarUser = () => {
               <Avatar.Fallback>AK</Avatar.Fallback>
             </Avatar>
             <div className={styles.topbarUserInfo}>
-              <p>Kovalenko Andrey</p>
-              <span>iamkovalenkone@gmail.com</span>
+              <Text>Kovalenko Andrey</Text>
+              <Text as='span' fz='sm' color='muted'>
+                iamkovalenkone@gmail.com
+              </Text>
             </div>
           </div>
         </Menu.Label>

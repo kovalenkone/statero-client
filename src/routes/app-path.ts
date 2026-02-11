@@ -1,5 +1,3 @@
-export const AppBasename = '/app'
-
 export const AppPath = {
   Root: '/',
 

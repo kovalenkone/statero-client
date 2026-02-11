@@ -1,4 +1,4 @@
-import { AppPath } from '@/shared/constants/app-path.constant'
+import { AppPath } from '@/routes/app-path'
 import type { ILink } from '@/shared/types/link.type'
 import {
   ArchiveIcon,
@@ -7,7 +7,7 @@ import {
   SquareCheckBigIcon,
 } from 'lucide-react'
 
-export const SidebarMainNavigation: ILink[] = [
+export const SIDEBAR_MAIN_NAVIGATION: ILink[] = [
   {
     label: 'Обзор',
     href: AppPath.Overview,
@@ -25,7 +25,7 @@ export const SidebarMainNavigation: ILink[] = [
   },
 ]
 
-export const SidebarFooterNavigation: ILink[] = [
+export const SIDEBAR_FOOTER_NAVIGATION: ILink[] = [
   {
     label: 'Архив',
     href: AppPath.Archive,

@@ -1,5 +1,5 @@
-import { AppPath } from '@/shared/constants/app-path.constant'
 import { redirect } from 'react-router'
+import { AppPath } from '../app-path'
 
 export const authMiddleware = () => {
   const user = true

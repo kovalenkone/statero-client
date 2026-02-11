@@ -1,6 +1,6 @@
-import { AppPath } from '@/shared/constants/app-path.constant'
 import { lazy } from 'react'
 import { redirect, type RouteObject } from 'react-router-dom'
+import { AppPath } from './app-path'
 import { authMiddleware } from './middlewares/auth.middleware'
 
 const AppLayout = lazy(() => import('@/layouts/AppLayout'))

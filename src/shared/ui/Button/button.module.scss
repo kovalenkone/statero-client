@@ -1,23 +1,26 @@
 .button {
   display: flex;
   align-items: center;
-  gap: 12px;
   // font-weight: 500;
+  transition: var(--transition-15);
 }
 
 .smButton {
+  gap: 4px;
   height: 24px;
   padding-inline: 4px;
   border-radius: var(--rounded-sm);
   font-size: var(--fz-sm);
 }
 .mdButton {
+  gap: 8px;
   height: 28px;
   padding-inline: 8px;
   border-radius: var(--rounded-md);
   font-size: var(--fz-md);
 }
 .lgButton {
+  gap: 12px;
   height: 32px;
   padding-inline: 12px;
   border-radius: var(--rounded-md);
@@ -32,6 +35,9 @@
   background-color: var(--secondary);
 }
 .ghostButton {
+  &:hover {
+    background-color: var(--secondary);
+  }
 }
 .outlineButton {
   border: 1px solid var(--border);

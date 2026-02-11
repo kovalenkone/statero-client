@@ -1,0 +1,1 @@
+export { KanbanTaskTags } from './KanbanTaskTags';

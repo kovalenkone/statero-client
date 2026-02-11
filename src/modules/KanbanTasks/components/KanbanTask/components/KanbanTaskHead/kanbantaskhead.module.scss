@@ -1,0 +1,15 @@
+.kanabTaskHead {
+  padding-inline: 16px 12px;
+}
+.kanbanTaskHeadInner {
+  position: relative;
+}
+.kanabTaskHeadCompletion {
+  position: absolute;
+  top: 2px;
+  left: 0px;
+}
+.kanabTaskHeadName {
+  text-indent: 24px;
+  line-height: 150%;
+}

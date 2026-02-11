@@ -1,0 +1,43 @@
+.pageTabs {
+  display: flex;
+  align-content: center;
+  gap: 4px;
+  padding: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.pageTab {
+  position: relative;
+
+  & button {
+    color: var(--muted);
+
+    &:hover,
+    &:focus-visible {
+      color: var(--primary);
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 8px;
+    right: 8px;
+    height: 1px;
+    background-color: var(--primary);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: var(--transition-15);
+  }
+
+  &.active::after {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &.active button {
+    color: var(--primary);
+  }
+}

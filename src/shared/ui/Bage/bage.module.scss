@@ -10,6 +10,20 @@
   }
 }
 
+.xxsBage {
+  height: 16px;
+  border-radius: var(--rounded-sm);
+  font-size: var(--fz-xs);
+
+  &:not(.square) {
+    padding-inline: 4px;
+  }
+
+  &.square {
+    width: 20px;
+  }
+}
+
 .xsBage {
   height: 20px;
   border-radius: var(--rounded-sm);
