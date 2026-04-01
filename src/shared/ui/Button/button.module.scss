@@ -1,6 +1,7 @@
 .button {
   display: flex;
   align-items: center;
+  justify-content: center;
   // font-weight: 500;
   transition: var(--transition-15);
 }
@@ -22,6 +23,13 @@
 .lgButton {
   gap: 12px;
   height: 32px;
+  padding-inline: 12px;
+  border-radius: var(--rounded-md);
+  font-size: var(--fz-md);
+}
+.xlButton {
+  gap: 12px;
+  height: 36px;
   padding-inline: 12px;
   border-radius: var(--rounded-md);
   font-size: var(--fz-md);

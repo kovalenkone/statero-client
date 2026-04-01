@@ -4,7 +4,7 @@ import type { ComponentProps } from 'react'
 import styles from './button.module.scss'
 
 interface IButtonProps extends ComponentProps<'button'> {
-  size?: 'sm' | 'md' | 'lg'
+  size?: 'sm' | 'md' | 'lg' | 'xl'
   variant?: 'primary' | 'secondary' | 'ghost' | 'outline'
   stretch?: boolean
   loading?: boolean

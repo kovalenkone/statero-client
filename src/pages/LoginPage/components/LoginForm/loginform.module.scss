@@ -1,0 +1,13 @@
+.loginForm {
+  width: 350px;
+}
+.loginFormInner {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.loginFormFields {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}

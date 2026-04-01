@@ -1,5 +1,15 @@
+import { AuthCard } from '@/components/AuthCard'
+import { RegisterForm } from './components/RegisterForm'
+
 const RegisterPage = () => {
-  return <h1>Register Page</h1>
+  return (
+    <AuthCard
+      title='Создайте аккаунт'
+      subtitle='Введите все поля ниже, чтобы создать новый аккаунт.'
+    >
+      <RegisterForm />
+    </AuthCard>
+  )
 }
 
 export { RegisterPage }
