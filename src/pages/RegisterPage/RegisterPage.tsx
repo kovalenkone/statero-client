@@ -5,7 +5,7 @@ const RegisterPage = () => {
   return (
     <AuthCard
       title='Создайте аккаунт'
-      subtitle='Введите все поля ниже, чтобы создать новый аккаунт.'
+      subtitle='Введите свои данные для создания учетной записи'
     >
       <RegisterForm />
     </AuthCard>

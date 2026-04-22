@@ -1,13 +1,14 @@
+import { api } from '../api'
 import { ApiPath } from '../api-path'
 import type { TLoginData } from './types/login.type'
 import type { TRegisterData } from './types/register.type'
 
 export const AuthService = {
-  Login: (data: TLoginData) => {
-    console.log('Login Data', ApiPath.Login, data)
+  login: (data: TLoginData) => {
+    api.post(ApiPath.auth.login, data)
   },
 
-  Register: (data: TRegisterData) => {
-    console.log('Register Data', ApiPath.Register, data)
+  register: (data: TRegisterData) => {
+    api.post(ApiPath.auth.register, data)
   },
 }

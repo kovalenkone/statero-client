@@ -1,6 +1,7 @@
 import clsx from 'clsx'
 import { Slot } from 'radix-ui'
 import type { ComponentProps } from 'react'
+import { Spinner } from '../Spinner'
 import styles from './button.module.scss'
 
 interface IButtonProps extends ComponentProps<'button'> {
@@ -19,6 +20,7 @@ const Button = ({
   loading,
   disabled,
   className,
+  children,
   ...props
 }: IButtonProps) => {
   const Comp = asChild ? Slot.Root : 'button'
@@ -32,7 +34,9 @@ const Button = ({
   )
 
   return (
-    <Comp className={buttonStyles} disabled={disabled || loading} {...props} />
+    <Comp className={buttonStyles} disabled={disabled || loading} {...props}>
+      {loading ? <Spinner /> : children}
+    </Comp>
   )
 }
 

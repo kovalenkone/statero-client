@@ -1,17 +1,17 @@
 export const AppPath = {
-  Root: '/',
+  root: '/',
 
-  Login: '/login',
-  Register: '/register',
+  login: '/login',
+  register: '/register',
 
-  Overview: '/overview',
-  Inbox: '/inbox',
+  overview: '/overview',
+  inbox: '/inbox',
 
-  Tasks: '/tasks',
-  Task: (id: string) => `/tasks/:${id}`,
+  tasks: '/tasks',
+  task: (id: string) => `/tasks/:${id}`,
 
-  Projects: '/projects',
-  Project: (id: string) => `/projects/${id}`,
+  projects: '/projects',
+  project: (id: string) => `/projects/${id}`,
 
-  Archive: '/archive',
+  archive: '/archive',
 } as const

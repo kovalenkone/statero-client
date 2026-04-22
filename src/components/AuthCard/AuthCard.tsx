@@ -22,10 +22,10 @@ const AuthCard = ({
         </Text>
       </div>
       <div className={styles.authCardBody}>{children}</div>
-      <div className={styles.authCardFooter}>
+      {/* <div className={styles.authCardFooter}>
         By clicking continue, you agree to our Terms of Service and Privacy
         Policy.
-      </div>
+      </div> */}
     </div>
   )
 }

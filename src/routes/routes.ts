@@ -22,27 +22,27 @@ export const AppRoutes: RouteObject = {
   middleware: [authMiddleware],
   children: [
     {
-      path: AppPath.Root,
-      loader: () => redirect(AppPath.Overview),
+      path: AppPath.root,
+      loader: () => redirect(AppPath.overview),
     },
     {
-      path: AppPath.Overview,
+      path: AppPath.overview,
       Component: OverviewPage,
     },
     {
-      path: AppPath.Inbox,
+      path: AppPath.inbox,
       Component: InboxPage,
     },
     {
-      path: AppPath.Tasks,
+      path: AppPath.tasks,
       Component: TasksPage,
     },
     {
-      path: AppPath.Projects,
+      path: AppPath.projects,
       Component: ProjectsPage,
     },
     {
-      path: AppPath.Archive,
+      path: AppPath.archive,
       Component: ArchivePage,
     },
   ],
@@ -52,11 +52,11 @@ export const AuthRoutes: RouteObject = {
   Component: AuthLayout,
   children: [
     {
-      path: AppPath.Login,
+      path: AppPath.login,
       Component: LoginPage,
     },
     {
-      path: AppPath.Register,
+      path: AppPath.register,
       Component: RegisterPage,
     },
   ],

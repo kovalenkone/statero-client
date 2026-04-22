@@ -4,6 +4,11 @@
   justify-content: center;
   // font-weight: 500;
   transition: var(--transition-15);
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
 }
 
 .smButton {

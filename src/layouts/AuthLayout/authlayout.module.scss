@@ -1,13 +1,7 @@
 .authLayout {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  height: 100vh;
-}
-.authLayoutContent {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.authLayoutBanner {
-  background-color: #2f2f2f;
+  padding-block: 60px;
+  min-height: 100vh;
 }

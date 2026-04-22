@@ -2,7 +2,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 4px;
   width: 100%;
 }
 
@@ -60,23 +60,21 @@
   }
 }
 
+.inputLabel {
+  font-size: 12px;
+}
+
 .inputError {
-  position: absolute;
-  top: calc(105% + 2px);
-  left: 0;
   font-size: 12px;
   color: var(--red);
   animation: slideDown 0.15s ease-in-out;
-  z-index: -1;
 }
 
 @keyframes slideDown {
   0% {
-    transform: translateY(-10px);
     opacity: 0;
   }
   100% {
-    transform: translateY(0px);
     opacity: 1;
   }
 }

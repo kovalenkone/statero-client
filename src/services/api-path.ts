@@ -1,4 +1,6 @@
 export const ApiPath = {
-  Login: '/auth/login',
-  Register: '/auth/register',
+  auth: {
+    login: '/auth/login',
+    register: '/auth/register',
+  },
 }
