@@ -1,27 +1,18 @@
-import { AuthService } from '@/services/auth/auth.service'
-import { type TRegisterData } from '@/services/auth/types/register.type'
+import { AppPath } from '@/shared/configs/app-path'
+import { Anchor } from '@/shared/ui/Anchor'
 import { Button } from '@/shared/ui/Button'
+import { Checkbox } from '@/shared/ui/Checkbox'
 import { Input } from '@/shared/ui/Input'
 import { PasswordInput } from '@/shared/ui/PasswordInput'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { useForm, type SubmitHandler } from 'react-hook-form'
+import { Text } from '@/shared/ui/Text'
+import { useRegister } from '../../hooks/useRegister'
 import styles from './registerform.module.scss'
-import { RegisterSchema } from '../../schemas/register.schema'
 
 const RegisterForm = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<TRegisterData>({
-    resolver: zodResolver(RegisterSchema),
-  })
-
-  const onSubmit: SubmitHandler<TRegisterData> = data =>
-    AuthService.register(data)
+  const { register, handleSubmit, errors, onSubmit } = useRegister()
 
   return (
-    <form className={styles.registerForm} onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <div className={styles.registerFormInner}>
         <div className={styles.registerFormFields}>
           <div className={styles.registerFormRow}>
@@ -56,10 +47,17 @@ const RegisterForm = () => {
             {...register('confirmPassword')}
             error={errors.confirmPassword?.message}
           />
+          <Checkbox />
         </div>
-        <Button size='xl' stretch>
+        <Button type='submit' size='xl' stretch>
           Создать аккаунт
         </Button>
+        <Text color='muted'>
+          Уже есть аккаунт?{' '}
+          <Anchor color='muted' to={AppPath.login}>
+            Войти
+          </Anchor>
+        </Text>
       </div>
     </form>
   )

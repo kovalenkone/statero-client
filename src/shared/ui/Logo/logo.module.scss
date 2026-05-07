@@ -1,0 +1,33 @@
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  & span {
+    text-transform: uppercase;
+  }
+}
+.smLogo {
+  font-size: 16px;
+
+  & img {
+    width: 20px;
+    height: 20px;
+  }
+}
+.mdLogo {
+  font-size: 20px;
+
+  & img {
+    width: 40px;
+    height: 40px;
+  }
+}
+.lgLogo {
+  font-size: 20px;
+
+  & img {
+    width: 40px;
+    height: 40px;
+  }
+}

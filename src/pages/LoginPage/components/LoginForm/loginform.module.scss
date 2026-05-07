@@ -1,13 +1,18 @@
-.loginForm {
-  width: 380px;
-}
 .loginFormInner {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  align-items: center;
+  gap: 24px;
 }
 .loginFormFields {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 16px;
+  width: 100%;
+}
+.loginFormPasswordField {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
 }

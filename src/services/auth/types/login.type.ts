@@ -1,4 +1,4 @@
-export interface TLoginData {
+export interface ILoginData {
   email: string
   password: string
 }

@@ -1,6 +1,6 @@
+import { AppPath } from '@/shared/configs/app-path'
 import { lazy } from 'react'
 import { redirect, type RouteObject } from 'react-router-dom'
-import { AppPath } from './app-path'
 import { authMiddleware } from './middlewares/auth.middleware'
 
 const AppLayout = lazy(() => import('@/layouts/AppLayout'))
@@ -8,6 +8,7 @@ const AuthLayout = lazy(() => import('@/layouts/AuthLayout'))
 
 const LoginPage = lazy(() => import('@/pages/LoginPage'))
 const RegisterPage = lazy(() => import('@/pages/RegisterPage'))
+const VerifyEmailPage = lazy(() => import('@/pages/VerifyEmailPage'))
 
 const OverviewPage = lazy(() => import('@/pages/OverviewPage'))
 const InboxPage = lazy(() => import('@/pages/InboxPage'))
@@ -58,6 +59,10 @@ export const AuthRoutes: RouteObject = {
     {
       path: AppPath.register,
       Component: RegisterPage,
+    },
+    {
+      path: AppPath.verify,
+      Component: VerifyEmailPage,
     },
   ],
 }

@@ -1,14 +1,14 @@
-import { AuthCard } from '@/components/AuthCard'
+import { AuthSection } from '@/shared/components/AuthSection'
 import { RegisterForm } from './components/RegisterForm'
 
 const RegisterPage = () => {
   return (
-    <AuthCard
+    <AuthSection
       title='Создайте аккаунт'
-      subtitle='Введите свои данные для создания учетной записи'
+      descr='Введите свои данные для создания учетной записи Statera'
     >
       <RegisterForm />
-    </AuthCard>
+    </AuthSection>
   )
 }
 

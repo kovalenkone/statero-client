@@ -1,14 +1,14 @@
-import { AuthCard } from '@/components/AuthCard'
+import { AuthSection } from '@/shared/components/AuthSection'
 import { LoginForm } from './components/LoginForm'
 
 const LoginPage = () => {
   return (
-    <AuthCard
+    <AuthSection
       title='Добро пожаловать'
-      subtitle='Войдите в свою учетную запись Statera'
+      descr='Войдите в свою учетную запись Statera'
     >
       <LoginForm />
-    </AuthCard>
+    </AuthSection>
   )
 }
 

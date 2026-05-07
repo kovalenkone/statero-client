@@ -1,4 +1,4 @@
-export interface TRegisterData {
+export interface IRegisterData {
   name: string
   surname: string
   email: string

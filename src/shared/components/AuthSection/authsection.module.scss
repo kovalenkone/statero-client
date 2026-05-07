@@ -1,0 +1,12 @@
+.authSection {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 400px;
+  width: 100%;
+}
+.authSectionHead {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}

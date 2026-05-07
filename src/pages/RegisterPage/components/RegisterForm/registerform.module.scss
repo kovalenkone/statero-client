@@ -1,17 +1,22 @@
-.registerForm {
-  width: 380px;
-}
 .registerFormInner {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 24px;
 }
 .registerFormFields {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  width: 100%;
 }
 .registerFormRow {
   display: flex;
   gap: 8px;
+}
+.registerFormFooter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
 }

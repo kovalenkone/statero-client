@@ -1,0 +1,24 @@
+.checkboxWrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.checkbox {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  background-color: var(--input);
+  border: 1px solid var(--border);
+  transition: var(--transition-15);
+  color: var(--foreground-secondary);
+
+  &[data-state='checked'] {
+    background-color: var(--primary);
+    border-color: var(--primary);
+  }
+}
+.checkboxIndicator {
+  display: grid;
+  place-content: center;
+}

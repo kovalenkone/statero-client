@@ -1,7 +1,7 @@
 import { VALIDATION_MESSAGE } from '@/shared/constants/messages.constant'
 import z from 'zod'
 
-export const RegisterSchema = z
+export const registerSchema = z
   .object({
     name: z.string().min(2, VALIDATION_MESSAGE.MIN_NAME),
     surname: z.string().min(2, VALIDATION_MESSAGE.MIN_SURNAME),
@@ -15,3 +15,5 @@ export const RegisterSchema = z
     message: VALIDATION_MESSAGE.UNCONFIRM_PASSWORDS,
     path: ['confirmPassword'],
   })
+
+export type TRegisterData = z.infer<typeof registerSchema>

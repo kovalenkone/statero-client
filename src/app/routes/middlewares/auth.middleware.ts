@@ -1,10 +1,10 @@
+import { AppPath } from '@/shared/configs/app-path'
 import { redirect } from 'react-router'
-import { AppPath } from '../app-path'
 
 export const authMiddleware = () => {
   const user = true
 
   if (!user) {
-    throw redirect(AppPath.Login)
+    throw redirect(AppPath.login)
   }
 }

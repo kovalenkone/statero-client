@@ -1,5 +1,5 @@
-import { PageHead } from '@/components/PageHead'
 import { PageLayout } from '@/layouts/PageLayout'
+import { PageHead } from '@/shared/components/PageHead'
 
 const ArchivePage = () => {
   return (

@@ -1,0 +1,30 @@
+.anchor {
+  transition: var(--transition-15);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.primaryAnchor {
+  color: var(--foreground);
+
+  &:hover,
+  &:focus-visible {
+    color: var(--muted);
+  }
+}
+.mutedAnchor {
+  color: var(--muted);
+
+  &:hover,
+  &:focus-visible {
+    color: var(--foreground);
+  }
+}
+.smAnchor {
+  font-size: 12px;
+}
+.mdAnchor {
+  font-size: 14px;
+}
+.lgAnchor {
+  font-size: 16px;
+}

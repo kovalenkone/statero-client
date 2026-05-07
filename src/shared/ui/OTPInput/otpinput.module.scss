@@ -1,0 +1,18 @@
+.OTPContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.OTPInput {
+  font-family: var(--font-family);
+  width: 40px !important;
+  aspect-ratio: 1;
+  border-radius: 8px;
+  user-select: none;
+  color: var(--foreground);
+  background-color: var(--input);
+  border: 1px solid var(--border);
+}
+.OTPInput::selection {
+  background-color: var(--input);
+}

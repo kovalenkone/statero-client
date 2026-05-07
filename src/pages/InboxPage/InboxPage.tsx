@@ -1,6 +1,6 @@
-import { PageHead } from '@/components/PageHead'
 import { PageLayout } from '@/layouts/PageLayout'
 import { Columns } from '@/modules/Columns'
+import { PageHead } from '@/shared/components/PageHead'
 
 const InboxPage = () => {
   return (
