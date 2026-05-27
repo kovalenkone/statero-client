@@ -1,7 +1,12 @@
 import clsx from 'clsx'
 import { CheckIcon } from 'lucide-react'
 import { Checkbox as CheckboxPrimitive } from 'radix-ui'
-import { useId, type ComponentProps, type ReactNode } from 'react'
+import {
+  useId,
+  type ComponentProps,
+  type PropsWithChildren,
+  type ReactNode,
+} from 'react'
 import styles from './checkbox.module.scss'
 
 interface ICheckboxProps extends ComponentProps<typeof CheckboxPrimitive.Root> {
@@ -15,7 +20,7 @@ const Checkbox = ({
   error,
   className,
   ...props
-}: ICheckboxProps) => {
+}: PropsWithChildren<ICheckboxProps>) => {
   const generatedId = useId()
   const inputId = id ?? generatedId
   const errorId = error ? `${inputId}-error` : undefined

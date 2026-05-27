@@ -2,21 +2,27 @@ import { AppPath } from '@/shared/configs/app-path'
 import { lazy } from 'react'
 import { redirect, type RouteObject } from 'react-router-dom'
 import { authMiddleware } from './middlewares/auth.middleware'
+import { verifyMiddleware } from './middlewares/verify.middleware'
 
+// Layouts
 const AppLayout = lazy(() => import('@/layouts/AppLayout'))
 const AuthLayout = lazy(() => import('@/layouts/AuthLayout'))
 
-const LoginPage = lazy(() => import('@/pages/LoginPage'))
-const RegisterPage = lazy(() => import('@/pages/RegisterPage'))
-const VerifyEmailPage = lazy(() => import('@/pages/VerifyEmailPage'))
+// Auth Pages
+const LoginPage = lazy(() => import('@/pages/Auth/LoginPage'))
+const RegisterPage = lazy(() => import('@/pages/Auth/RegisterPage'))
+const VerifyEmailPage = lazy(() => import('@/pages/Auth/VerifyEmailPage'))
+const ForgotPasswordPage = lazy(() => import('@/pages/Auth/ForgotPasswordPage'))
+const ResetPasswordPage = lazy(() => import('@/pages/Auth/ResetPasswordPage'))
 
-const OverviewPage = lazy(() => import('@/pages/OverviewPage'))
-const InboxPage = lazy(() => import('@/pages/InboxPage'))
+// App Pages
+const OverviewPage = lazy(() => import('@/pages/App/OverviewPage'))
+const InboxPage = lazy(() => import('@/pages/App/InboxPage'))
 
-const TasksPage = lazy(() => import('@/pages/TasksPage'))
-const ProjectsPage = lazy(() => import('@/pages/ProjectsPage'))
+const TasksPage = lazy(() => import('@/pages/App/TasksPage'))
+const ProjectsPage = lazy(() => import('@/pages/App/ProjectsPage'))
 
-const ArchivePage = lazy(() => import('@/pages/ArchivePage'))
+const ArchivePage = lazy(() => import('@/pages/App/ArchivePage'))
 
 export const AppRoutes: RouteObject = {
   Component: AppLayout,
@@ -61,8 +67,17 @@ export const AuthRoutes: RouteObject = {
       Component: RegisterPage,
     },
     {
-      path: AppPath.verify,
+      path: AppPath.verifyEmail,
       Component: VerifyEmailPage,
+      middleware: [verifyMiddleware],
+    },
+    {
+      path: AppPath.forgotPassword,
+      Component: ForgotPasswordPage,
+    },
+    {
+      path: AppPath.resetPassword,
+      Component: ResetPasswordPage,
     },
   ],
 }

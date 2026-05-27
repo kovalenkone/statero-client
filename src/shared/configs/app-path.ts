@@ -1,16 +1,15 @@
-const pathWithParams = (url: string, params?: Record<string, string>) => {
-  if (!params) return url
-  return `${url}?${new URLSearchParams(params)}`
-}
-
 export const AppPath = {
   root: '/',
 
+  // Auth path
   login: '/login',
   register: '/register',
-  verify: '/verify',
-  verifyWithEmail: (email: string) => pathWithParams('/verify', { email }),
+  verifyEmail: '/verify-email',
+  forgotPassword: '/forgot-password',
+  verifyResetEmail: '/verify-reset-email',
+  resetPassword: '/reset-password',
 
+  // App path
   overview: '/overview',
   inbox: '/inbox',
 

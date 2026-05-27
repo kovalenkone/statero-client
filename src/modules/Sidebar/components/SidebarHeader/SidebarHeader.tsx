@@ -1,5 +1,6 @@
+import logo from '@/shared/assets/images/statera-logo.svg'
 import { ActionButton } from '@/shared/ui/ActionButton'
-import { MenuIcon, OrbitIcon } from 'lucide-react'
+import { MenuIcon } from 'lucide-react'
 import styles from './sidebarheader.module.scss'
 
 const SidebarHeader = () => {
@@ -9,7 +10,7 @@ const SidebarHeader = () => {
         <MenuIcon size={20} />
       </ActionButton>
       <div className={styles.sidebarHeaderLogo}>
-        <OrbitIcon size={20} />
+        <img width={20} height={20} src={logo} alt='Statera' />
         Statera
       </div>
     </div>

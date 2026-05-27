@@ -1,4 +1,4 @@
-import { AppPath } from '@/routes/app-path'
+import { AppPath } from '@/shared/configs/app-path'
 import type { ILink } from '@/shared/types/link.type'
 import {
   ArchiveIcon,
@@ -10,17 +10,17 @@ import {
 export const SIDEBAR_MAIN_NAVIGATION: ILink[] = [
   {
     label: 'Обзор',
-    href: AppPath.Overview,
+    href: AppPath.overview,
     icon: HouseIcon,
   },
   {
     label: 'Входящие',
-    href: AppPath.Inbox,
+    href: AppPath.inbox,
     icon: InboxIcon,
   },
   {
     label: 'Задачи',
-    href: AppPath.Tasks,
+    href: AppPath.tasks,
     icon: SquareCheckBigIcon,
   },
 ]
@@ -28,7 +28,7 @@ export const SIDEBAR_MAIN_NAVIGATION: ILink[] = [
 export const SIDEBAR_FOOTER_NAVIGATION: ILink[] = [
   {
     label: 'Архив',
-    href: AppPath.Archive,
+    href: AppPath.archive,
     icon: ArchiveIcon,
   },
 ]

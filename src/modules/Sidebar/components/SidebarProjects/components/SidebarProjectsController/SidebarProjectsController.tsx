@@ -1,15 +1,15 @@
+import { AppPath } from '@/shared/configs/app-path'
 import { ActionButton } from '@/shared/ui/ActionButton'
 import { ChevronDownIcon, PlusIcon } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import styles from './sidebarprojectscontroller.module.scss'
-import { AppPath } from '@/routes/app-path'
 
 const SidebarProjectsController = () => {
   return (
     <div className={styles.sidebarProjectsController}>
       <Link
         className={styles.sidebarProjectsControllerLink}
-        to={AppPath.Projects}
+        to={AppPath.projects}
       >
         Проекты
       </Link>
