@@ -2,8 +2,10 @@ import { AuthService } from '@/services/auth/auth.service'
 import { AppPath } from '@/shared/configs/app-path'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useMutation } from '@tanstack/react-query'
+import axios from 'axios'
 import { useForm, type SubmitHandler } from 'react-hook-form'
 import { createSearchParams, useNavigate } from 'react-router-dom'
+import { toast } from 'sonner'
 import { registerSchema, type TRegisterData } from '../schemas/register.schema'
 
 export const useRegister = () => {
@@ -28,7 +30,9 @@ export const useRegister = () => {
       })
     },
     onError: error => {
-      console.log('error', error)
+      if (axios.isAxiosError(error)) {
+        toast.error('Неизвестная ошибка')
+      }
     },
   })
 

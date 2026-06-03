@@ -1,14 +1,14 @@
 import { AuthCard } from '@/shared/components/AuthCard'
 import { OTPInput } from '@/shared/ui/OTPInput'
-import { useState } from 'react'
+import { useVerifyEmail } from '../../hooks/useVerifyEmail'
 
 const VerifyEmailForm = () => {
-  const [otp, setOtp] = useState('')
+  const { otp, setOtp, loading } = useVerifyEmail()
 
   return (
     <AuthCard.Form onSubmit={() => {}}>
       <AuthCard.Fields>
-        <OTPInput onChange={setOtp} value={otp} />
+        <OTPInput onChange={setOtp} value={otp} isDisabled={loading} />
       </AuthCard.Fields>
     </AuthCard.Form>
   )

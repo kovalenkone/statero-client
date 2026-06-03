@@ -1,0 +1,24 @@
+.sonner {
+  &[data-sonner-toaster] {
+    font-family: var(--font-family);
+
+    &[data-sonner-theme='dark'],
+    &[data-sonner-theme='light'] {
+      --success-bg: #254f34;
+      --success-text: #f4f4f5;
+      --success-border: #356b48;
+      --error-bg: #4f2b25;
+      --error-text: #f4f4f5;
+      --error-border: #6b4635;
+    }
+  }
+
+  & [data-sonner-toast][data-styled='true'] {
+    font-size: 14px;
+    gap: 6px;
+
+    & [data-title] {
+      font-weight: 400;
+    }
+  }
+}

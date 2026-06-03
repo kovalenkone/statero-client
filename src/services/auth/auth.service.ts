@@ -4,7 +4,10 @@ import type { IForgotPasswordData } from './types/forgot-password'
 import type { ILoginData } from './types/login.type'
 import type { IRegisterData } from './types/register.type'
 import type { IResetPasswordData } from './types/reset-password'
-import type { IVerifyData } from './types/verify.type'
+import type {
+  IVerifyEmailData,
+  IVerifyEmailResponse,
+} from './types/verify.type'
 
 export const AuthService = {
   login: (data: ILoginData) => {
@@ -15,8 +18,8 @@ export const AuthService = {
     return api.post(ApiPath.auth.register, data)
   },
 
-  verify: (data: IVerifyData) => {
-    return api.post(ApiPath.auth.verify, data)
+  verifyEmail: (data: IVerifyEmailData): Promise<IVerifyEmailResponse> => {
+    return api.post(ApiPath.auth.verifyEmail, data)
   },
 
   forgotPassword: (data: IForgotPasswordData) => {
