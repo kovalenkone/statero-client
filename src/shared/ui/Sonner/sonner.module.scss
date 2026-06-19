@@ -4,12 +4,17 @@
 
     &[data-sonner-theme='dark'],
     &[data-sonner-theme='light'] {
-      --success-bg: #254f34;
+      --success-bg: #14532d;
       --success-text: #f4f4f5;
-      --success-border: #356b48;
-      --error-bg: #4f2b25;
+      --success-border: #166534;
+
+      --error-bg: #450a0a;
       --error-text: #f4f4f5;
-      --error-border: #6b4635;
+      --error-border: #7f1d1d;
+
+      --warning-bg: #a16207;
+      --warning-text: #f4f4f5;
+      --warning-border: #ca8a04;
     }
   }
 

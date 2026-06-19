@@ -6,7 +6,7 @@ const ResetPasswordPage = () => {
     <AuthCard>
       <AuthCard.Head
         title='Новый пароль'
-        descr='Введите новый пароль для вашей учетной записи Statera'
+        descr='Введите новый пароль для вашей учетной записи Statero'
       />
       <ResetPasswordForm />
     </AuthCard>

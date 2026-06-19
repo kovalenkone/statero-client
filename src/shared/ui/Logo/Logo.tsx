@@ -13,8 +13,8 @@ const Logo = ({ size = 'md', variant = 'default', className }: ILogoProps) => {
 
   return (
     <div className={logoStyles}>
-      <img src={logo} alt='Statera' />
-      {variant === 'default' && <span>Statera</span>}
+      <img src={logo} alt='Statero' />
+      {variant === 'default' && <span>Statero</span>}
     </div>
   )
 }

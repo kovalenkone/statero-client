@@ -2,6 +2,7 @@ import { AuthService } from '@/services/auth/auth.service'
 import { useMutation } from '@tanstack/react-query'
 import { useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
+import { toast } from 'sonner'
 import type { IVerifyEmailData } from '../types/verifyEmailData.type'
 
 export const useVerifyEmail = () => {
@@ -14,6 +15,7 @@ export const useVerifyEmail = () => {
       console.log('Success')
     },
     onError: () => {
+      toast.error('Неверный код авторизации')
       setOtp('')
     },
   })

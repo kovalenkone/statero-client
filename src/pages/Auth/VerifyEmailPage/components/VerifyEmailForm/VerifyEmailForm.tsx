@@ -1,5 +1,6 @@
 import { AuthCard } from '@/shared/components/AuthCard'
 import { OTPInput } from '@/shared/ui/OTPInput'
+import { Text } from '@/shared/ui/Text'
 import { useVerifyEmail } from '../../hooks/useVerifyEmail'
 
 const VerifyEmailForm = () => {
@@ -9,6 +10,7 @@ const VerifyEmailForm = () => {
     <AuthCard.Form onSubmit={() => {}}>
       <AuthCard.Fields>
         <OTPInput onChange={setOtp} value={otp} isDisabled={loading} />
+        <Text color='muted'>Повторная отправка через 0:24</Text>
       </AuthCard.Fields>
     </AuthCard.Form>
   )

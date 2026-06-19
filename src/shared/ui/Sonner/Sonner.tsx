@@ -12,6 +12,7 @@ const Sonner = ({ ...props }: ToasterProps) => {
     <Toaster
       theme='system'
       position='top-right'
+      duration={1000}
       richColors
       swipeDirections={['right']}
       className={styles.sonner}

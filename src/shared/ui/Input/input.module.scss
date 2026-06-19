@@ -59,6 +59,10 @@
   &.invalid {
     border-color: var(--red);
   }
+
+  &:focus-visible {
+    box-shadow: 0px 0px 0px 1px var(--ring);
+  }
 }
 
 .smInput {

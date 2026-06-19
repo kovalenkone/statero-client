@@ -1,0 +1,14 @@
+.appLoader {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+  width: 100vw;
+  height: 100vh;
+}
+.appLoaderLogo {
+  width: 200px;
+  height: 200px;
+  transform: translateX(-3px);
+}

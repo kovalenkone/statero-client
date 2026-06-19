@@ -4,5 +4,5 @@ export interface ILoginData {
 }
 
 export interface ILoginResponse {
-  user: string
+  accessToken: string
 }

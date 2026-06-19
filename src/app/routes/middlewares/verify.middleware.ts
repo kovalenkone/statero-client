@@ -3,7 +3,7 @@ import { redirect, type LoaderFunctionArgs } from 'react-router'
 
 export const verifyMiddleware = ({ request }: LoaderFunctionArgs) => {
   const url = new URL(request.url)
-  const hasEmail = url.searchParams.get('email')
+  const hasEmail = url.searchParams.has('email')
 
   if (!hasEmail) {
     throw redirect(AppPath.login)

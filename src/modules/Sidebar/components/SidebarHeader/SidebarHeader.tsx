@@ -10,8 +10,8 @@ const SidebarHeader = () => {
         <MenuIcon size={20} />
       </ActionButton>
       <div className={styles.sidebarHeaderLogo}>
-        <img width={20} height={20} src={logo} alt='Statera' />
-        Statera
+        <img width={20} height={20} src={logo} alt='Statero' />
+        Statero
       </div>
     </div>
   )

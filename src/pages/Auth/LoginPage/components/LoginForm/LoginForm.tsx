@@ -7,7 +7,7 @@ import { useLogin } from '../../hooks/useLogin'
 import styles from './loginform.module.scss'
 
 const LoginForm = () => {
-  const { register, errors, onSubmit } = useLogin()
+  const { register, errors, pending, onSubmit } = useLogin()
 
   return (
     <AuthCard.Form onSubmit={onSubmit}>
@@ -28,7 +28,7 @@ const LoginForm = () => {
           <Anchor to={AppPath.forgotPassword}>Забыли пароль?</Anchor>
         </div>
       </AuthCard.Fields>
-      <AuthCard.Submit label='Войти' />
+      <AuthCard.Submit label='Войти' prending={pending} />
       <AuthCard.Link
         text='Нет аккаунта?'
         link={{ label: 'Зарегистрироваться', href: AppPath.register }}

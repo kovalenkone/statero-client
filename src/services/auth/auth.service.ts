@@ -1,7 +1,8 @@
 import { api } from '@/shared/api/api'
 import { ApiPath } from '@/shared/api/api-path'
 import type { IForgotPasswordData } from './types/forgot-password'
-import type { ILoginData } from './types/login.type'
+import type { ILoginData, ILoginResponse } from './types/login.type'
+import type { IRefreshResponse } from './types/refresh.type'
 import type { IRegisterData } from './types/register.type'
 import type { IResetPasswordData } from './types/reset-password'
 import type {
@@ -10,12 +11,18 @@ import type {
 } from './types/verify.type'
 
 export const AuthService = {
-  login: (data: ILoginData) => {
+  login: (data: ILoginData): Promise<ILoginResponse> => {
     return api.post(ApiPath.auth.login, data)
   },
 
   register: (data: IRegisterData) => {
     return api.post(ApiPath.auth.register, data)
+  },
+
+  logout: () => api.post(ApiPath.auth.logout),
+
+  refresh: (): Promise<IRefreshResponse> => {
+    return api.post(ApiPath.auth.refresh)
   },
 
   verifyEmail: (data: IVerifyEmailData): Promise<IVerifyEmailResponse> => {

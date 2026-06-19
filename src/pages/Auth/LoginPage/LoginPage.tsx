@@ -6,7 +6,7 @@ const LoginPage = () => {
     <AuthCard>
       <AuthCard.Head
         title='Добро пожаловать'
-        descr='Войдите в свою учетную запись Statera'
+        descr='Войдите в свою учетную запись Statero'
       />
       <LoginForm />
     </AuthCard>

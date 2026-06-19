@@ -6,7 +6,7 @@ const RegisterPage = () => {
     <AuthCard>
       <AuthCard.Head
         title='Создайте аккаунт'
-        descr='Введите свои данные для создания учетной записи Statera'
+        descr='Введите свои данные для создания учетной записи Statero'
       />
       <RegisterForm />
     </AuthCard>
