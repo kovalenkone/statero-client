@@ -19,6 +19,7 @@ const Column = ({ id, index, children }: PropsWithChildren<IColumnProps>) => {
 
   return (
     <div className='Column' ref={ref}>
+      <div className='ww'>1 column</div>
       {children}
     </div>
   )

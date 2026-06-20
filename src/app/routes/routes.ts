@@ -1,7 +1,6 @@
 import { AppPath } from '@/shared/configs/app-path'
 import { lazy } from 'react'
 import { redirect, type RouteObject } from 'react-router-dom'
-import { authMiddleware } from './middlewares/auth.middleware'
 import { verifyMiddleware } from './middlewares/verify.middleware'
 
 // Layouts
@@ -26,7 +25,7 @@ const ArchivePage = lazy(() => import('@/pages/App/ArchivePage'))
 
 export const AppRoutes: RouteObject = {
   Component: AppLayout,
-  middleware: [authMiddleware],
+  middleware: [],
   children: [
     {
       path: AppPath.root,

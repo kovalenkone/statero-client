@@ -1,0 +1,1 @@
+export { SidebarProjectsList } from './SidebarProjectsList';

@@ -1,0 +1,9 @@
+.sidebarNavigation {
+  padding: 8px;
+  flex-shrink: 0;
+}
+.sidebarNavigationList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
