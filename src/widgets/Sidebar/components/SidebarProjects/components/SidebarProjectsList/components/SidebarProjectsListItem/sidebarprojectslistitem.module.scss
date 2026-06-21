@@ -13,7 +13,8 @@
   }
 
   &:hover .sidebarProjectButton,
-  &:focus-visible .sidebarProjectButton {
+  &:focus-visible .sidebarProjectButton,
+  &:focus .sidebarProjectButton {
     display: flex;
   }
 }
@@ -32,6 +33,6 @@
   }
 }
 .sidebarProjectButton {
-  // display: none;
+  display: none;
   flex-shrink: 0;
 }

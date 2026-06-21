@@ -22,7 +22,7 @@ const Sidebar = () => {
       <SidebarNavigation links={SIDEBAR_MAIN_NAVIGATION} />
 
       <SidebarScrollArea>
-        <SidebarProjects title='Проекты' />
+        <SidebarProjects title='Проекты' onAdd={() => {}} />
         <SidebarProjects title='Избранное' />
       </SidebarScrollArea>
 

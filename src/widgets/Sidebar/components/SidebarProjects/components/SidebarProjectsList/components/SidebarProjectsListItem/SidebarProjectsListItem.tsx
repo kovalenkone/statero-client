@@ -15,7 +15,11 @@ import styles from './sidebarprojectslistitem.module.scss'
 const SidebarProjectsListItem = () => {
   return (
     <div className={styles.sidebarProjectLinkWrapper}>
-      <Link to={''} className={styles.sidebarProjectLink}>
+      <Link
+        to={''}
+        className={styles.sidebarProjectLink}
+        title='Statera задачи задачи задачи задачи'
+      >
         <Bage size='xs' square>
           S
         </Bage>

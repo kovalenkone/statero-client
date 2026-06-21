@@ -29,11 +29,11 @@
 .ghostActionButton {
   &:hover,
   &:focus-visible {
-    // background-color: var(--input);
     background-color: var(--secondary);
   }
 
-  &[data-state='open'] {
+  &[data-state='open'][aria-haspopup='menu'] {
     background-color: var(--secondary);
+    display: flex !important;
   }
 }

@@ -6,12 +6,32 @@
   height: 32px;
   border-radius: var(--rounded-md);
   transition: var(--transition-15);
-  margin-bottom: 4px;
+  width: 100%;
+
+  cursor: pointer;
+  user-select: none;
+
+  &:hover,
+  &:has(.sidebarProjectsHeadTrigger:focus-visible) {
+    background-color: var(--secondary);
+    outline: none;
+  }
 }
-.sidebarProjectsHeadActions {
+.sidebarProjectsHeadTrigger {
   display: flex;
+  align-items: center;
   gap: 4px;
-  opacity: 0;
-  visibility: hidden;
-  transition: var(--transition-15);
+  color: var(--muted);
+  height: 100%;
+  flex: 1;
+  outline: none;
+
+  & svg {
+    // transition: var(--transition-15);
+    transform: translateY(1px);
+  }
+
+  &[data-state='closed'] svg {
+    transform: translateY(1px) rotate(-90deg);
+  }
 }
