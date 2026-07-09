@@ -6,7 +6,7 @@
   border: 1px solid var(--background-secondary);
   border-radius: 6px;
   background-color: var(--background-secondary);
-  transition: var(--transition-15);
+  transition: border-color var(--transition-15);
   cursor: pointer;
 
   &:hover {

@@ -1,0 +1,20 @@
+.kanbanColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 320px;
+}
+.kanbanColumnHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  padding: 0 8px 0 16px;
+  border-radius: 6px;
+  background-color: var(--background-secondary);
+}
+.kanbanColumnBody {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}

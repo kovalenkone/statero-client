@@ -1,14 +1,12 @@
-import { Topbar } from '@/modules/Topbar'
-import { UserService } from '@/services/user/user.service'
 import { Sidebar } from '@/widgets/Sidebar'
-import { useEffect } from 'react'
+import { Topbar } from '@/widgets/Topbar'
 import { Outlet } from 'react-router'
 import styles from './applayout.module.scss'
 
 const AppLayout = () => {
-  useEffect(() => {
-    UserService.me()
-  })
+  // useEffect(() => {
+  //   UserService.me()
+  // })
 
   return (
     <div className={styles.appLayout}>
