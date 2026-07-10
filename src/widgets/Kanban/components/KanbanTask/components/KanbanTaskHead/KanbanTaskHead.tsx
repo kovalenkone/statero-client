@@ -1,0 +1,63 @@
+import { ActionButton } from '@/shared/ui/ActionButton'
+import { Menu } from '@/shared/ui/Menu'
+import { TaskCompletion } from '@/shared/ui/TaskCompletion'
+import { Text } from '@/shared/ui/Text'
+import {
+  CopyIcon,
+  EllipsisIcon,
+  Link2Icon,
+  PencilIcon,
+  Trash2Icon,
+} from 'lucide-react'
+import styles from './kanbantaskhead.module.scss'
+
+interface IKanbanTaskHeadProps {
+  title: string
+  completed: boolean
+}
+
+const KanbanTaskHead = ({ title, completed }: IKanbanTaskHeadProps) => {
+  return (
+    <div className={styles.kanbanTaskHead}>
+      <div className={styles.kanbanTaskHeadInner}>
+        <TaskCompletion
+          completed={completed}
+          className={styles.kanabTaskHeadCompletion}
+        />
+        <Text className={styles.kanabTaskHeadName}>{title}</Text>
+        <Menu>
+          <Menu.Trigger asChild>
+            <ActionButton
+              size='sm'
+              className={styles.kanbanTaskHeadActions}
+              data-kanban-task-actions
+            >
+              <EllipsisIcon size={16} />
+            </ActionButton>
+          </Menu.Trigger>
+          <Menu.Content align='center'>
+            <Menu.Item>
+              <PencilIcon />
+              Изменить
+            </Menu.Item>
+            <Menu.Item>
+              <Link2Icon />
+              Скопировать
+            </Menu.Item>
+            <Menu.Item>
+              <CopyIcon />
+              Дублировать
+            </Menu.Item>
+            <Menu.Separator />
+            <Menu.Item variant='danger'>
+              <Trash2Icon />
+              Удалить
+            </Menu.Item>
+          </Menu.Content>
+        </Menu>
+      </div>
+    </div>
+  )
+}
+
+export { KanbanTaskHead }

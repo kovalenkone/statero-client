@@ -1,0 +1,9 @@
+@mixin invisible {
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.15s ease-in-out;
+}
+@mixin visible {
+  opacity: 1;
+  visibility: visible;
+}

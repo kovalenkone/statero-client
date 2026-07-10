@@ -1,20 +1,34 @@
 import type { ISection } from '@/entities/section/types/section.type'
+import { useDisclosure } from '@/shared/hooks/useDisclosure'
+import { ActionButton } from '@/shared/ui/ActionButton'
+import { Menu } from '@/shared/ui/Menu'
 import { Text } from '@/shared/ui/Text'
 import { CollisionPriority } from '@dnd-kit/abstract'
 import { RestrictToHorizontalAxis } from '@dnd-kit/abstract/modifiers'
+import { closestCorners } from '@dnd-kit/collision'
 import { useSortable } from '@dnd-kit/react/sortable'
-import type { PropsWithChildren } from 'react'
+import {
+  EllipsisIcon,
+  PencilIcon,
+  PlusIcon,
+  SparkleIcon,
+  Trash2Icon,
+} from 'lucide-react'
+import { type PropsWithChildren } from 'react'
 import { KANBAN_ENTITY } from '../../constants/kanban-entity'
 import styles from './kanbancolumn.module.scss'
+import { PointerSensor, PointerActivationConstraints } from '@dnd-kit/dom'
 
 interface IKanbanColumnProps {
-  section: ISection
   index: number
+  section: ISection
+  totalTasks: number
 }
 
 const KanbanColumn = ({
   index,
   section,
+  totalTasks,
   children,
 }: PropsWithChildren<IKanbanColumnProps>) => {
   const { ref, handleRef } = useSortable({
@@ -23,14 +37,62 @@ const KanbanColumn = ({
     type: KANBAN_ENTITY.COLUMN,
     accept: [KANBAN_ENTITY.COLUMN, KANBAN_ENTITY.ITEM],
     collisionPriority: CollisionPriority.Low,
+    collisionDetector: closestCorners,
     modifiers: [RestrictToHorizontalAxis],
+
+    sensors: [
+      PointerSensor.configure({
+        activationConstraints: [
+          new PointerActivationConstraints.Delay({ value: 100, tolerance: 1 }),
+        ],
+      }),
+    ],
+    // plugins: [Feedback.configure({ feedback: 'clone' })],
   })
+
+  const [isNewTaskOpened, { open: openNewTask, close: closeNewTask }] =
+    useDisclosure(false)
 
   return (
     <div className={styles.kanbanColumn} ref={ref}>
-      <div className={styles.kanbanColumnHead} ref={handleRef}>
-        <Text fw='medium'>{section.name}</Text>
-        <div className={styles.kanbanColumnActions}></div>
+      <div ref={handleRef}>
+        <div className={styles.kanbanColumnHead}>
+          <Text fw='medium' fz='md'>
+            {section.name}
+          </Text>
+          <Text color='muted'>{totalTasks}</Text>
+          <div className={styles.kanbanColumnActions}>
+            <ActionButton
+              size='sm'
+              disabled={isNewTaskOpened}
+              className={styles.kanbanColumnAddNewTaskBtn}
+            >
+              <PlusIcon size={16} onClick={openNewTask} />
+            </ActionButton>
+            <Menu>
+              <Menu.Trigger asChild>
+                <ActionButton size='sm' className={styles.kanbanColumnMenu}>
+                  <EllipsisIcon size={16} />
+                </ActionButton>
+              </Menu.Trigger>
+              <Menu.Content align='center'>
+                <Menu.Item>
+                  <PencilIcon />
+                  Переименовать
+                </Menu.Item>
+                <Menu.Item>
+                  <SparkleIcon />
+                  Добавить правило
+                </Menu.Item>
+                <Menu.Separator />
+                <Menu.Item variant='danger'>
+                  <Trash2Icon />
+                  Удалить
+                </Menu.Item>
+              </Menu.Content>
+            </Menu>
+          </div>
+        </div>
       </div>
       <div className={styles.kanbanColumnBody}>{children}</div>
     </div>

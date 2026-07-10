@@ -15,11 +15,12 @@ import { tasksMap } from '../utils/tasksMap'
 const MOCK_DATA: ISection[] = [
   {
     id: 'c1',
-    name: 'Column 1',
+    name: 'Сегодня',
     tasks: [
       {
         id: 1,
-        title: 'Task 1',
+        title:
+          'Задача с большим названием, требующая внимания, создана чисто для теста',
         description: 'Task description',
         isCompleted: false,
       },
@@ -39,7 +40,7 @@ const MOCK_DATA: ISection[] = [
   },
   {
     id: 'c2',
-    name: 'Column 2',
+    name: 'Неделя',
     tasks: [
       {
         id: 4,
@@ -57,7 +58,7 @@ const MOCK_DATA: ISection[] = [
   },
   {
     id: 'c3',
-    name: 'Column 3',
+    name: 'Месяц',
     tasks: [],
   },
 ]

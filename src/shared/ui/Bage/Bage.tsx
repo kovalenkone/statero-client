@@ -4,7 +4,7 @@ import styles from './bage.module.scss'
 
 interface IBageProps {
   size?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg'
-  variant?: 'blue' | 'violet' | 'orange' | 'green' | 'yellow' | 'grey'
+  variant?: 'blue' | 'violet' | 'orange' | 'green' | 'yellow' | 'grey' | 'white'
   square?: boolean
   className?: string
 }

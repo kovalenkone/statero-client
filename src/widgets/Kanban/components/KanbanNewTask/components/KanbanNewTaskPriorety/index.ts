@@ -1,0 +1,1 @@
+export { KanbanNewTaskPriorety } from './KanbanNewTaskPriorety';

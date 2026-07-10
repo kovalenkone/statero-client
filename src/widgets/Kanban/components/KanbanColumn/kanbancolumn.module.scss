@@ -1,20 +1,54 @@
 .kanbanColumn {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 12px;
   width: 320px;
+
+  &[data-dnd-placeholder] {
+    opacity: 0.5;
+  }
 }
 .kanbanColumnHead {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 8px;
   height: 40px;
   padding: 0 8px 0 16px;
   border-radius: 6px;
   background-color: var(--background-secondary);
+
+  &:hover .kanbanColumnAddNewTaskBtn,
+  &:hover .kanbanColumnMenu {
+    @include mixins.visible;
+  }
 }
 .kanbanColumnBody {
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+.kanbanColumnActions {
+  display: flex;
+  gap: 6px;
+  margin-left: auto;
+}
+.kanbanColumnDragHandle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: var(--muted);
+  transition: var(--transition-15);
+  cursor: grab;
+
+  &:hover,
+  &[aria-grabbed='true'] {
+    color: var(--primary);
+  }
+}
+.kanbanColumnAddNewTaskBtn,
+.kanbanColumnMenu {
+  @include mixins.invisible;
 }

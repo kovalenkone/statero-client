@@ -15,7 +15,12 @@ const Kanban = () => {
     >
       <div className={styles.kanban}>
         {items.map(([column, tasksIds], index) => (
-          <KanbanColumn key={column} index={index} section={sections[column]}>
+          <KanbanColumn
+            key={column}
+            index={index}
+            section={sections[column]}
+            totalTasks={tasksIds.length}
+          >
             {tasksIds.map((id, index) => (
               <KanbanTask
                 key={id}

@@ -1,0 +1,19 @@
+.kanbanNewTask {
+  padding: 8px;
+  border-radius: 6px;
+  background-color: var(--background-secondary);
+}
+.kanbanNewTaskInner {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.kanbanNewTaskProperties {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.kanbanNewTaskPropertiesLine {
+  display: flex;
+  gap: 4px;
+}

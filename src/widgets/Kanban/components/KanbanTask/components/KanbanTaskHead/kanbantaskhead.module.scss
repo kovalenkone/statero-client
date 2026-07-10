@@ -1,0 +1,23 @@
+.kanbanTaskHead {
+  padding-inline: 16px 12px;
+}
+.kanbanTaskHeadInner {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+.kanabTaskHeadCompletion {
+  position: absolute;
+  top: 2px;
+  left: 0px;
+}
+.kanabTaskHeadName {
+  text-indent: 24px;
+  line-height: 150%;
+}
+.kanbanTaskHeadActions {
+  flex-shrink: 0;
+
+  @include mixins.invisible;
+}

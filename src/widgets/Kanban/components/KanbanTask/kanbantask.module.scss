@@ -1,4 +1,5 @@
 .kanbanTask {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -8,11 +9,17 @@
   background-color: var(--background-secondary);
   transition: border-color var(--transition-15);
   cursor: pointer;
+  overflow: hidden;
+
+  &[data-dnd-placeholder] {
+    opacity: 0.5;
+  }
 
   &:hover {
     border-color: var(--border);
+
+    & [data-kanban-task-actions] {
+      @include mixins.visible;
+    }
   }
-}
-.kanbanTask[data-dnd-placeholder] {
-  opacity: 0.5;
 }

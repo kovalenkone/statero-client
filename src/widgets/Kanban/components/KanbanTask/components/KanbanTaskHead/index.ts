@@ -1,0 +1,1 @@
+export { KanbanTaskHead } from './KanbanTaskHead';
