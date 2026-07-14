@@ -6,7 +6,7 @@ import styles from './button.module.scss'
 
 interface IButtonProps extends ComponentProps<'button'> {
   size?: 'sm' | 'md' | 'lg' | 'xl'
-  variant?: 'primary' | 'secondary' | 'ghost' | 'outline'
+  variant?: 'primary' | 'secondary' | 'ghost' | 'outline' | 'danger'
   stretch?: boolean
   loading?: boolean
   asChild?: boolean

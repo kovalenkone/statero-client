@@ -46,6 +46,11 @@
 }
 .secondaryButton {
   background-color: var(--secondary);
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--secondary-accent);
+  }
 }
 .ghostButton {
   &:hover {
@@ -54,6 +59,15 @@
 }
 .outlineButton {
   border: 1px solid var(--border);
+}
+.dangerButton {
+  background-color: var(--danger-background);
+  color: var(--danger-foreground);
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--danger-background-muted);
+  }
 }
 
 .stretchButton {

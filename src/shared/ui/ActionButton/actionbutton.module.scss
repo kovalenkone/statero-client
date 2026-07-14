@@ -26,6 +26,18 @@
   border-radius: var(--rounded-md);
 }
 
+.primaryActionButton {
+  background-color: var(--primary);
+  color: var(--foreground-secondary);
+}
+.secondaryActionButton {
+  background-color: var(--secondary);
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--secondary-accent);
+  }
+}
 .ghostActionButton {
   &:hover,
   &:focus-visible {
@@ -37,5 +49,17 @@
     display: flex !important;
     opacity: 1 !important;
     visibility: visible !important;
+  }
+}
+.outlineActionButton {
+  border: 1px solid var(--border);
+}
+.dangerActionButton {
+  background-color: var(--danger-background);
+  color: var(--danger-foreground);
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--danger-background-muted);
   }
 }

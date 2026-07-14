@@ -3,6 +3,7 @@
   align-items: center;
   flex-shrink: 0;
   gap: 12px;
+  flex-shrink: 0;
   // font-weight: 500;
 
   &.square {
@@ -20,7 +21,7 @@
   }
 
   &.square {
-    width: 20px;
+    width: 16px;
   }
 }
 

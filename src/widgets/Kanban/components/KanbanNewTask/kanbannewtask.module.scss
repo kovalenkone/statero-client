@@ -6,14 +6,23 @@
 .kanbanNewTaskInner {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
 }
 .kanbanNewTaskProperties {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
+  gap: 4px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
 }
-.kanbanNewTaskPropertiesLine {
+.kanbanNewTaskFooter {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.kanbanNewTaskActions {
+  display: flex;
+  align-items: center;
   gap: 4px;
 }

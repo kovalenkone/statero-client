@@ -6,6 +6,7 @@ import { Text } from '@/shared/ui/Text'
 import { CollisionPriority } from '@dnd-kit/abstract'
 import { RestrictToHorizontalAxis } from '@dnd-kit/abstract/modifiers'
 import { closestCorners } from '@dnd-kit/collision'
+import { PointerActivationConstraints, PointerSensor } from '@dnd-kit/dom'
 import { useSortable } from '@dnd-kit/react/sortable'
 import {
   EllipsisIcon,
@@ -16,8 +17,8 @@ import {
 } from 'lucide-react'
 import { type PropsWithChildren } from 'react'
 import { KANBAN_ENTITY } from '../../constants/kanban-entity'
+import { KanbanNewTask } from '../KanbanNewTask'
 import styles from './kanbancolumn.module.scss'
-import { PointerSensor, PointerActivationConstraints } from '@dnd-kit/dom'
 
 interface IKanbanColumnProps {
   index: number
@@ -55,46 +56,50 @@ const KanbanColumn = ({
 
   return (
     <div className={styles.kanbanColumn} ref={ref}>
-      <div ref={handleRef}>
-        <div className={styles.kanbanColumnHead}>
-          <Text fw='medium' fz='md'>
-            {section.name}
-          </Text>
-          <Text color='muted'>{totalTasks}</Text>
-          <div className={styles.kanbanColumnActions}>
-            <ActionButton
-              size='sm'
-              disabled={isNewTaskOpened}
-              className={styles.kanbanColumnAddNewTaskBtn}
-            >
-              <PlusIcon size={16} onClick={openNewTask} />
-            </ActionButton>
-            <Menu>
-              <Menu.Trigger asChild>
-                <ActionButton size='sm' className={styles.kanbanColumnMenu}>
-                  <EllipsisIcon size={16} />
-                </ActionButton>
-              </Menu.Trigger>
-              <Menu.Content align='center'>
-                <Menu.Item>
-                  <PencilIcon />
-                  Переименовать
-                </Menu.Item>
-                <Menu.Item>
-                  <SparkleIcon />
-                  Добавить правило
-                </Menu.Item>
-                <Menu.Separator />
-                <Menu.Item variant='danger'>
-                  <Trash2Icon />
-                  Удалить
-                </Menu.Item>
-              </Menu.Content>
-            </Menu>
-          </div>
+      <div className={styles.kanbanColumnHead} ref={handleRef}>
+        <Text fw='medium' fz='md'>
+          {section.name}
+        </Text>
+        <Text color='muted'>{totalTasks}</Text>
+        <div className={styles.kanbanColumnActions}>
+          <ActionButton
+            size='sm'
+            disabled={isNewTaskOpened}
+            className={styles.kanbanColumnAddNewTaskBtn}
+            onPointerDownCapture={e => e.stopPropagation()}
+          >
+            <PlusIcon size={16} onClick={openNewTask} />
+          </ActionButton>
+          <Menu>
+            <Menu.Trigger asChild>
+              <ActionButton size='sm' className={styles.kanbanColumnMenu}>
+                <EllipsisIcon size={16} />
+              </ActionButton>
+            </Menu.Trigger>
+            <Menu.Content align='center'>
+              <Menu.Item>
+                <PencilIcon />
+                Переименовать
+              </Menu.Item>
+              <Menu.Item>
+                <SparkleIcon />
+                Автоматизация
+              </Menu.Item>
+              <Menu.Separator />
+              <Menu.Item variant='danger'>
+                <Trash2Icon />
+                Удалить
+              </Menu.Item>
+            </Menu.Content>
+          </Menu>
         </div>
       </div>
-      <div className={styles.kanbanColumnBody}>{children}</div>
+      <div className={styles.kanbanColumnBody}>
+        {isNewTaskOpened && (
+          <KanbanNewTask onClose={closeNewTask} onSubmit={() => {}} />
+        )}
+        {children}
+      </div>
     </div>
   )
 }

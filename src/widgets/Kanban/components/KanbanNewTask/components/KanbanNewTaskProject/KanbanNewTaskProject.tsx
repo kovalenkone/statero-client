@@ -1,11 +1,14 @@
-import { ActionButton } from '@/shared/ui/ActionButton'
-import { FolderClosedIcon } from 'lucide-react'
+import { Bage } from '@/shared/ui/Bage'
+import { Button } from '@/shared/ui/Button'
 
 const KanbanNewTaskProject = () => {
   return (
-    <ActionButton size='sm'>
-      <FolderClosedIcon size={14} />
-    </ActionButton>
+    <Button variant='ghost' size='sm'>
+      <Bage variant='blue' size='xxs' square>
+        S
+      </Bage>{' '}
+      Statera / На тесте
+    </Button>
   )
 }
 

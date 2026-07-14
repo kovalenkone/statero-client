@@ -1,0 +1,11 @@
+.confirmDialogHead {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+.confirmDialogActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}

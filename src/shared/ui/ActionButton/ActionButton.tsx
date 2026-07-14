@@ -5,7 +5,7 @@ import styles from './actionbutton.module.scss'
 
 interface IActionButtonProps extends ComponentProps<'button'> {
   size?: 'xs' | 'sm' | 'md' | 'lg'
-  variant?: 'primary' | 'secondary' | 'ghost' | 'outline'
+  variant?: 'primary' | 'secondary' | 'ghost' | 'outline' | 'danger'
   loading?: boolean
   asChild?: boolean
 }

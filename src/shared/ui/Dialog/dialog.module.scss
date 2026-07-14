@@ -1,0 +1,36 @@
+.dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  padding: 16px;
+  border: 1px solid var(--border);
+  background-color: var(--background-secondary);
+  border-radius: 12px;
+  width: 400px;
+  animation: fadeIn 0.15s ease-in-out;
+}
+.dialogOverlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.15s ease-in-out;
+}
+.dialogTitle {
+  font-size: 16px;
+}
+.dialogDescription {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

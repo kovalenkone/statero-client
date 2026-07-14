@@ -1,0 +1,27 @@
+.textarea {
+  font-family: var(--font-family);
+  min-height: 36px;
+  background-color: var(--input);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px;
+  color: var(--foreground);
+  width: 100%;
+  transition: var(--transition-15);
+  font-size: 14px;
+  line-height: 130%;
+  overflow: hidden;
+  resize: none;
+
+  &::placeholder {
+    color: var(--muted);
+  }
+
+  &.invalid {
+    border-color: var(--red);
+  }
+
+  &:focus-visible {
+    box-shadow: 0px 0px 0px 1px var(--ring);
+  }
+}
