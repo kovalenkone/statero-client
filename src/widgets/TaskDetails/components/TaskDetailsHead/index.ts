@@ -1,0 +1,1 @@
+export { TaskDetailsHead } from './TaskDetailsHead';

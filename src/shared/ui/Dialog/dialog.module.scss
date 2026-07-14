@@ -4,13 +4,21 @@
   left: 50%;
   transform: translate(-50%, -50%);
 
-  padding: 16px;
   border: 1px solid var(--border);
   background-color: var(--background-secondary);
   border-radius: 12px;
-  width: 400px;
   animation: fadeIn 0.15s ease-in-out;
 }
+.smDialog {
+  width: 320px;
+}
+.mdDialog {
+  width: 400px;
+}
+.lgDialog {
+  width: 800px;
+}
+
 .dialogOverlay {
   position: fixed;
   inset: 0;

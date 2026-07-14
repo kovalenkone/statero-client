@@ -3,9 +3,9 @@ import { Menu } from '@/shared/ui/Menu'
 import { TaskCompletion } from '@/shared/ui/TaskCompletion'
 import { Text } from '@/shared/ui/Text'
 import {
-  CopyIcon,
+  CopyPlusIcon,
   EllipsisIcon,
-  Link2Icon,
+  LinkIcon,
   PencilIcon,
   Trash2Icon,
 } from 'lucide-react'
@@ -41,11 +41,11 @@ const KanbanTaskHead = ({ title, completed }: IKanbanTaskHeadProps) => {
               Изменить
             </Menu.Item>
             <Menu.Item>
-              <Link2Icon />
+              <LinkIcon />
               Скопировать
             </Menu.Item>
             <Menu.Item>
-              <CopyIcon />
+              <CopyPlusIcon />
               Дублировать
             </Menu.Item>
             <Menu.Separator />

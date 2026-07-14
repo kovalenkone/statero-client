@@ -1,0 +1,12 @@
+.taskDetailsHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 12px;
+  padding-block: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.taskDetailsHeadActions {
+  display: flex;
+  gap: 4px;
+}

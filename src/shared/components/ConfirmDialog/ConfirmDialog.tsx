@@ -21,7 +21,12 @@ const ConfirmDialog = ({
   onClose,
 }: IConfirmDialogProps) => {
   return (
-    <Dialog size='md' opened={opened} onClose={onClose}>
+    <Dialog
+      className={styles.confirmDialog}
+      size='md'
+      opened={opened}
+      onClose={onClose}
+    >
       <div className={styles.confirmDialogHead}>
         <Dialog.Title>{title}</Dialog.Title>
         {description && <Dialog.Description>{description}</Dialog.Description>}

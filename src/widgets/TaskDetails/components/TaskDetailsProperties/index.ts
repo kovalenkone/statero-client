@@ -1,0 +1,1 @@
+export { TaskDetailsProperties } from './TaskDetailsProperties';
