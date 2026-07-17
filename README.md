@@ -1,75 +1,48 @@
-# React + TypeScript + Vite
+# Statero - приложение для управления задачами и проектами с использованием Kanban-досок.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+(на данный момент находится еще в стадии разработки)
 
-Currently, two official plugins are available:
+Statero — это инструмент для управления проектами и задачами, созданный в качестве личного проекта. Он предлагает удобный интерфейс для организации работы над проектами с помощью Kanban-досок и поддержки функции перетаскивания (drag-and-drop).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Страницы
 
-## React Compiler
+- Аутентификация (вход, регистрация, подтверждение email, сброс пароля)
+- Управление проектами
+- Kanban-доски с поддержкой перетаскивания (drag-and-drop)
+- Создание задач с тегами, сроками выполнения и привязкой к проектам
+- Раздел «Входящие» для новых задач
+- Архив выполненных задач
+- Общая панель управления (дашборд)
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## Стэк
 
-Note: This will impact Vite dev & build performances.
+- **React 19** + **TypeScript**
+- **Vite** — сборщик
+- **TanStack React Query** — серверный стейт менеджер
+- **React Hook Form** + **Zod** — формы и валидация
+- **Radix UI** — UI компоненты
+- **dnd-kit** — drag and drop
+- **React Router v7** — роутинг
+- **Sass** — стили
+- **Lucide React** — иконки
 
-## Expanding the ESLint configuration
+## Запуск приложения
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+```bash
+# Установка зависимостей
+bun install
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+# Скопируйте файл .env и укажите API URL.
+cp .env.example .env
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Запустить сервер разработки
+bun dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Backend
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Это клиентское приложение. Репозиторий бэкенда можно найти здесь: https://github.com/kovalenkone/statero-server
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## License
+
+MIT
