@@ -1,5 +1,4 @@
 import { Sidebar } from '@/widgets/Sidebar'
-import { TaskDetails } from '@/widgets/TaskDetails'
 import { Topbar } from '@/widgets/Topbar'
 import { Outlet } from 'react-router'
 import styles from './applayout.module.scss'
@@ -18,7 +17,7 @@ const AppLayout = () => {
           <Outlet />
         </main>
       </div>
-      <TaskDetails opened={true} onClose={() => {}} />
+      {/* <TaskDetails opened={true} onClose={() => {}} /> */}
     </div>
   )
 }

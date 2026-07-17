@@ -18,7 +18,7 @@ interface IKanbanNewTaskProps {
 
 const KanbanNewTask = ({ onClose, onSubmit }: IKanbanNewTaskProps) => {
   const [title, setTitle] = useState('')
-  const [priorety, setPriorety] = useState<TTaskPriorety>(null)
+  const [priorety, setPriorety] = useState<TTaskPriorety>('none')
 
   const [confirmOpened, { open: confirmOpen, close: confirmClose }] =
     useDisclosure(false)

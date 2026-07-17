@@ -1,4 +1,4 @@
-export type TTaskPriorety = 'high' | 'medium' | 'low' | null
+export type TTaskPriorety = 'high' | 'medium' | 'low' | 'none'
 
 export const TaskPriorety = {
   high: {
@@ -18,7 +18,7 @@ export const TaskPriorety = {
   },
   none: {
     color: 'grey',
-    value: null,
+    value: 'none',
     label: 'Без приоритета',
   },
 } as const

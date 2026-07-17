@@ -59,6 +59,10 @@
 }
 .outlineButton {
   border: 1px solid var(--border);
+
+  &:hover {
+    background-color: var(--secondary);
+  }
 }
 .dangerButton {
   background-color: var(--danger-background);
