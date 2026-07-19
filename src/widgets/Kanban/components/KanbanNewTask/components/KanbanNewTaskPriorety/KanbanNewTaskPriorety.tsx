@@ -9,7 +9,7 @@ import { CircleAlertIcon } from 'lucide-react'
 
 interface IKanbanNewTaskPrioretyProps {
   priorety: TTaskPriorety
-  onChange: (priorety: TTaskPriorety) => void
+  onChange: (priorety: string) => void
 }
 
 const KanbanNewTaskPriorety = ({

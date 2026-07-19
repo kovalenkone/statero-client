@@ -1,0 +1,77 @@
+.calendar {
+  --space: 4px;
+
+  padding: var(--space);
+  width: max-content;
+  border: 1px solid var(--border);
+  border-radius: var(--rounded-lg);
+}
+.calendarRoot {
+  position: relative;
+}
+.calendarMonthCaption {
+  display: flex;
+  align-content: center;
+  padding-left: 8px;
+  height: 28px;
+}
+.calendarMonthGrid {
+  border-collapse: collapse;
+}
+.calendarCaption {
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+}
+.calendarNav {
+  position: absolute;
+  top: 0;
+  right: var(--space);
+
+  display: flex;
+  gap: 4px;
+}
+.calendarNavButton {
+  width: 24px;
+  height: 24px;
+}
+.calendarWeekday {
+  font-weight: 400;
+  height: 28px;
+  width: 28px;
+  color: var(--muted);
+}
+.calendarDay {
+  text-align: center;
+  width: 28px;
+  height: 28px;
+  user-select: none;
+  border-radius: 4px;
+  transition: var(--transition-15);
+
+  &:not([data-disabled='true']):hover {
+    background-color: var(--secondary);
+    cursor: pointer;
+  }
+
+  &[data-disabled='true'] {
+    opacity: 0.4;
+  }
+
+  &[data-today='true'] {
+    color: var(--red);
+  }
+}
+.calendarPresets {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 4px;
+  margin-bottom: 8px;
+}
+.calendarPreset {
+  justify-content: flex-start;
+
+  & span {
+    margin-left: auto;
+    text-transform: capitalize;
+  }
+}
