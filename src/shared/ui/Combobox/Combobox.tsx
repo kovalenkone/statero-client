@@ -1,5 +1,4 @@
 import { Command } from 'cmdk'
-import { Popover } from 'radix-ui'
 import {
   createContext,
   useContext,
@@ -7,6 +6,7 @@ import {
   type ComponentProps,
   type PropsWithChildren,
 } from 'react'
+import { Popover } from '../Popover'
 import styles from './combobox.module.scss'
 
 type TComboboxContext = { close: () => void }
@@ -17,7 +17,7 @@ const Combobox = ({
   defaultOpen,
   onOpenChange,
   ...props
-}: ComponentProps<typeof Popover.Root>) => {
+}: ComponentProps<typeof Popover>) => {
   const [internalOpen, setInternalOpen] = useState(defaultOpen ?? false)
   const isControlled = open !== undefined
   const actualOpen = isControlled ? open : internalOpen
@@ -29,7 +29,7 @@ const Combobox = ({
 
   return (
     <ComboboxContext.Provider value={{ close: () => setOpen(false) }}>
-      <Popover.Root open={actualOpen} onOpenChange={setOpen} {...props} />
+      <Popover open={actualOpen} onOpenChange={setOpen} {...props} />
     </ComboboxContext.Provider>
   )
 }
@@ -43,11 +43,7 @@ const ComboboxTrigger = ({
 const ComboboxContent = ({
   ...props
 }: ComponentProps<typeof Popover.Content>) => {
-  return (
-    <Popover.Portal>
-      <Popover.Content className={styles.comboboxContent} {...props} />
-    </Popover.Portal>
-  )
+  return <Popover.Content className={styles.comboboxContent} {...props} />
 }
 
 const ComboboxList = ({

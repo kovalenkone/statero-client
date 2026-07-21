@@ -18,10 +18,10 @@
   border-radius: 6px;
   background-color: var(--background-secondary);
 
-  &:hover .kanbanColumnAddNewTaskBtn,
-  &:hover .kanbanColumnMenu {
-    @include mixins.visible;
-  }
+  // &:hover .kanbanColumnAddNewTaskBtn,
+  // &:hover .kanbanColumnMenu {
+  //   @include mixins.visible;
+  // }
 }
 .kanbanColumnBody {
   display: flex;
@@ -48,7 +48,7 @@
     color: var(--primary);
   }
 }
-.kanbanColumnAddNewTaskBtn,
-.kanbanColumnMenu {
-  @include mixins.invisible;
-}
+// .kanbanColumnAddNewTaskBtn,
+// .kanbanColumnMenu {
+//   @include mixins.invisible;
+// }

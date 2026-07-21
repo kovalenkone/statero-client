@@ -5,30 +5,35 @@ import {
 import { TaskPrioretySelector } from '@/shared/components/TaskPrioretySelector'
 import { ActionButton } from '@/shared/ui/ActionButton'
 import { Button } from '@/shared/ui/Button'
+import { getAccentColor } from '@/shared/utils/getAccentColor'
 import { CircleAlertIcon } from 'lucide-react'
+
+const PRIORITY_ICON_SIZE = 14
 
 interface IKanbanNewTaskPrioretyProps {
   priorety: TTaskPriorety
-  onChange: (priorety: string) => void
+  onSelect: (priorety: TTaskPriorety) => void
 }
 
 const KanbanNewTaskPriorety = ({
   priorety,
-  onChange,
+  onSelect,
 }: IKanbanNewTaskPrioretyProps) => {
+  const priorityConfig = priorety !== 'none' ? TaskPriorety[priorety] : null
+
   return (
-    <TaskPrioretySelector priorety={priorety} onSelect={onChange}>
-      {priorety !== 'none' ? (
+    <TaskPrioretySelector priorety={priorety} onSelect={onSelect}>
+      {priorityConfig ? (
         <Button size='sm' variant='ghost'>
           <CircleAlertIcon
-            size={14}
-            style={{ color: `var(--${TaskPriorety[priorety].color})` }}
+            size={PRIORITY_ICON_SIZE}
+            style={{ color: getAccentColor(priorityConfig.color) }}
           />
-          {TaskPriorety[priorety].label}
+          {priorityConfig.label}
         </Button>
       ) : (
         <ActionButton size='sm'>
-          <CircleAlertIcon size={14} />
+          <CircleAlertIcon size={PRIORITY_ICON_SIZE} />
         </ActionButton>
       )}
     </TaskPrioretySelector>

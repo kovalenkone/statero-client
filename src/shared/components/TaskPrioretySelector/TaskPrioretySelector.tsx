@@ -3,12 +3,13 @@ import {
   type TTaskPriorety,
 } from '@/entities/task/constants/task-priorety.constant'
 import { Combobox } from '@/shared/ui/Combobox'
+import { getAccentColor } from '@/shared/utils/getAccentColor'
 import type { PropsWithChildren } from 'react'
 import styles from './taskprioretyselector.module.scss'
 
 interface ITaskPrioretySelectorProps {
   priorety: TTaskPriorety
-  onSelect: (priorety: string) => void
+  onSelect: (priorety: TTaskPriorety) => void
 }
 
 const TaskPrioretySelector = ({
@@ -16,24 +17,22 @@ const TaskPrioretySelector = ({
   onSelect,
   children,
 }: PropsWithChildren<ITaskPrioretySelectorProps>) => {
-  console.log('Object.values(TaskPriorety)', Object.values(TaskPriorety))
-
   return (
     <Combobox>
       <Combobox.Trigger asChild>{children}</Combobox.Trigger>
       <Combobox.Content align='center'>
         <Combobox.List>
-          {Object.values(TaskPriorety).map(priorety => (
+          {Object.values(TaskPriorety).map(option => (
             <Combobox.Item
-              key={priorety.value}
-              value={priorety.value}
-              onSelect={() => onSelect(priorety.value)}
+              key={option.value}
+              value={option.value}
+              onSelect={() => onSelect(option.value)}
             >
               <span
                 className={styles.taskPrioretyDot}
-                style={{ backgroundColor: `var(--${priorety.color})` }}
+                style={{ backgroundColor: getAccentColor(option.color) }}
               />
-              {priorety.label}
+              {option.label}
             </Combobox.Item>
           ))}
         </Combobox.List>

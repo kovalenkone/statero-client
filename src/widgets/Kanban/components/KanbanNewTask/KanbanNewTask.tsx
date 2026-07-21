@@ -2,7 +2,6 @@ import type { TTaskPriorety } from '@/entities/task/constants/task-priorety.cons
 import { ConfirmDialog } from '@/shared/components/ConfirmDialog'
 import { useDisclosure } from '@/shared/hooks/useDisclosure'
 import { ActionButton } from '@/shared/ui/ActionButton'
-import { Calendar } from '@/shared/ui/Calendar'
 import { Textarea } from '@/shared/ui/Textarea'
 import { SendHorizonalIcon, XIcon } from 'lucide-react'
 import { useState } from 'react'
@@ -20,6 +19,7 @@ interface IKanbanNewTaskProps {
 const KanbanNewTask = ({ onClose, onSubmit }: IKanbanNewTaskProps) => {
   const [title, setTitle] = useState('')
   const [priorety, setPriorety] = useState<TTaskPriorety>('none')
+  const [date, setDate] = useState<Date | undefined>()
 
   const [confirmOpened, { open: confirmOpen, close: confirmClose }] =
     useDisclosure(false)
@@ -49,10 +49,9 @@ const KanbanNewTask = ({ onClose, onSubmit }: IKanbanNewTaskProps) => {
               }
             }}
           />
-          <Calendar />
           <div className={styles.kanbanNewTaskProperties}>
-            <KanbanNewTaskPriorety priorety={priorety} onChange={setPriorety} />
-            <KanbanNewTaskDueDate />
+            <KanbanNewTaskPriorety priorety={priorety} onSelect={setPriorety} />
+            <KanbanNewTaskDueDate date={date} onSelect={setDate} />
             <KanbanNewTaskTags />
           </div>
           <div className={styles.kanbanNewTaskFooter}>
