@@ -23,7 +23,7 @@ const DueDatePicker = ({
   return (
     <Popover open={opened} onOpenChange={next => (next ? open() : close())}>
       <Popover.Trigger asChild>{children}</Popover.Trigger>
-      <Popover.Content>
+      <Popover.Content side='right' align='start'>
         <Calendar
           mode='single'
           selected={date}

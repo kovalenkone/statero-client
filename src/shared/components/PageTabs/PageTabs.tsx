@@ -1,3 +1,4 @@
+import { ICON_SIZE } from '@/shared/constants/icon-size.constant'
 import type { IPageTab } from '@/shared/types/page-tab'
 import { Button } from '@/shared/ui/Button'
 import clsx from 'clsx'
@@ -33,7 +34,7 @@ const PageTabs = <T extends string>({
             size='md'
             onClick={() => handleChangeTab(tab.value)}
           >
-            {tab.icon && <tab.icon size={16} />}
+            {tab.icon && <tab.icon size={ICON_SIZE.md} />}
             {tab.label}
           </Button>
         </div>

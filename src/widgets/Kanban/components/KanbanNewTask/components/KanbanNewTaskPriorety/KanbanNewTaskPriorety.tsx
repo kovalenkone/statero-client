@@ -8,7 +8,7 @@ import { Button } from '@/shared/ui/Button'
 import { getAccentColor } from '@/shared/utils/getAccentColor'
 import { CircleAlertIcon } from 'lucide-react'
 
-const PRIORITY_ICON_SIZE = 14
+const PRIORITY_ICON_SIZE = 16
 
 interface IKanbanNewTaskPrioretyProps {
   priorety: TTaskPriorety
@@ -24,7 +24,7 @@ const KanbanNewTaskPriorety = ({
   return (
     <TaskPrioretySelector priorety={priorety} onSelect={onSelect}>
       {priorityConfig ? (
-        <Button size='sm' variant='ghost'>
+        <Button size='md' variant='ghost'>
           <CircleAlertIcon
             size={PRIORITY_ICON_SIZE}
             style={{ color: getAccentColor(priorityConfig.color) }}

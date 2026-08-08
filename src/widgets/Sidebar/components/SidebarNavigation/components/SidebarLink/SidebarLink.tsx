@@ -1,3 +1,4 @@
+import { ICON_SIZE } from '@/shared/constants/icon-size.constant'
 import type { ILink } from '@/shared/types/link.type'
 import clsx from 'clsx'
 import { Link, useLocation } from 'react-router-dom'
@@ -19,7 +20,7 @@ const SidebarLink = ({ link }: ISidebarLink) => {
         [styles.active]: pathname === link.href,
       })}
     >
-      {Icon && <Icon size={16} />}
+      {Icon && <Icon size={ICON_SIZE.md} />}
       {link.label}
     </Link>
   )

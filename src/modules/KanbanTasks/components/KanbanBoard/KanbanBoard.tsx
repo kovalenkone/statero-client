@@ -1,3 +1,4 @@
+import { ICON_SIZE } from '@/shared/constants/icon-size.constant'
 import type { IBoard } from '@/shared/types/board.type'
 import { ActionButton } from '@/shared/ui/ActionButton'
 import { Text } from '@/shared/ui/Text'
@@ -5,6 +6,8 @@ import { useSortable } from '@dnd-kit/react/sortable'
 import { EllipsisIcon, PlusIcon } from 'lucide-react'
 import { KanbanTask } from '../KanbanTask'
 import styles from './kanbanboard.module.scss'
+
+const ACTION_ICON_SIZE = ICON_SIZE.md
 
 interface IKanbanBoardProps {
   board: IBoard
@@ -28,10 +31,10 @@ const KanbanBoard = ({ board }: IKanbanBoardProps) => {
         </div>
         <div className={styles.kanbanBoardActions}>
           <ActionButton size='sm'>
-            <PlusIcon size={16} />
+            <PlusIcon size={ACTION_ICON_SIZE} />
           </ActionButton>
           <ActionButton size='sm'>
-            <EllipsisIcon size={16} />
+            <EllipsisIcon size={ACTION_ICON_SIZE} />
           </ActionButton>
         </div>
       </div>

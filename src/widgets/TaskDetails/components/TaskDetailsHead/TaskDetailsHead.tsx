@@ -1,3 +1,4 @@
+import { ICON_SIZE } from '@/shared/constants/icon-size.constant'
 import { ActionButton } from '@/shared/ui/ActionButton'
 import { Menu } from '@/shared/ui/Menu'
 import { Text } from '@/shared/ui/Text'
@@ -11,6 +12,8 @@ import {
 } from 'lucide-react'
 import styles from './taskdetailshead.module.scss'
 
+const ACTION_ICON_SIZE = ICON_SIZE.lg
+
 interface ITaskDetailsHeadProps {
   onClose: () => void
 }
@@ -23,7 +26,7 @@ const TaskDetailsHead = ({ onClose }: ITaskDetailsHeadProps) => {
         <Menu>
           <Menu.Trigger>
             <ActionButton size='md'>
-              <EllipsisIcon size={18} />
+              <EllipsisIcon size={ACTION_ICON_SIZE} />
             </ActionButton>
           </Menu.Trigger>
           <Menu.Content align='end'>
@@ -51,7 +54,7 @@ const TaskDetailsHead = ({ onClose }: ITaskDetailsHeadProps) => {
           </Menu.Content>
         </Menu>
         <ActionButton size='md' onClick={onClose}>
-          <XIcon size={18} />
+          <XIcon size={ACTION_ICON_SIZE} />
         </ActionButton>
       </div>
     </div>

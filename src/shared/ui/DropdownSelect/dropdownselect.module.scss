@@ -1,0 +1,75 @@
+.dropdownSelectContent {
+  padding: 4px;
+  background-color: #1b1b1b;
+  border: 1px solid var(--border);
+  border-radius: var(--rounded-lg);
+  animation-duration: 0.3s;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  animation-name: slideUp;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0.3;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+.dropdownSelectItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 28px;
+  padding-inline: 8px;
+  border-radius: var(--rounded-md);
+  transition: var(--transition-15);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+
+  &:hover,
+  &:focus-visible,
+  &:focus {
+    // background-color: #242424;
+    background-color: var(--secondary);
+    outline: none;
+  }
+}
+
+.dropDownSelectItemChecked {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  color: var(--muted);
+
+  & svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+.dropdownSelectSearch {
+  margin-bottom: 8px;
+}
+.dropdownSelectEmpty {
+  padding: 4px;
+}
+.dropdownSelectList {
+  max-height: 200px;
+  overflow: auto;
+}

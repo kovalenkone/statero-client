@@ -1,7 +1,11 @@
+import type { ISection } from '@/entities/section/types/section.type'
+import type { TAccentColor } from '@/shared/constants/accent-color.constant'
+
 export interface IProject {
-  id: number
+  id: string
   name: string
   description: string
-  color: string
+  color: TAccentColor
   icon: string
+  sections: ISection[]
 }

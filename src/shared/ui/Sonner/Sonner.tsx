@@ -1,3 +1,4 @@
+import { ICON_SIZE } from '@/shared/constants/icon-size.constant'
 import {
   CircleCheckIcon,
   CircleXIcon,
@@ -6,6 +7,8 @@ import {
 } from 'lucide-react'
 import { Toaster, type ToasterProps } from 'sonner'
 import styles from './sonner.module.scss'
+
+const SOONER_ICON_SIZE = ICON_SIZE.lg
 
 const Sonner = ({ ...props }: ToasterProps) => {
   return (
@@ -17,10 +20,10 @@ const Sonner = ({ ...props }: ToasterProps) => {
       swipeDirections={['right']}
       className={styles.sonner}
       icons={{
-        success: <CircleCheckIcon size={18} />,
-        info: <InfoIcon size={18} />,
-        warning: <TriangleAlertIcon size={18} />,
-        error: <CircleXIcon size={18} />,
+        success: <CircleCheckIcon size={SOONER_ICON_SIZE} />,
+        info: <InfoIcon size={SOONER_ICON_SIZE} />,
+        warning: <TriangleAlertIcon size={SOONER_ICON_SIZE} />,
+        error: <CircleXIcon size={SOONER_ICON_SIZE} />,
       }}
       {...props}
     />

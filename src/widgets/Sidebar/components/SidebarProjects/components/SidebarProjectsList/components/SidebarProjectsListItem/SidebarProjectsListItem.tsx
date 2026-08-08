@@ -11,6 +11,7 @@ import {
 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import styles from './sidebarprojectslistitem.module.scss'
+import { ICON_SIZE } from '@/shared/constants/icon-size.constant'
 
 const SidebarProjectsListItem = () => {
   return (
@@ -28,7 +29,7 @@ const SidebarProjectsListItem = () => {
       <Menu>
         <Menu.Trigger asChild>
           <ActionButton size='xs' className={styles.sidebarProjectButton}>
-            <EllipsisIcon size={14} />
+            <EllipsisIcon size={ICON_SIZE.sm} />
           </ActionButton>
         </Menu.Trigger>
         <Menu.Content>

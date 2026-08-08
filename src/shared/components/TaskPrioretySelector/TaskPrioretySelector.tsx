@@ -2,7 +2,7 @@ import {
   TaskPriorety,
   type TTaskPriorety,
 } from '@/entities/task/constants/task-priorety.constant'
-import { Combobox } from '@/shared/ui/Combobox'
+import { DropdownSelect } from '@/shared/ui/DropdownSelect'
 import { getAccentColor } from '@/shared/utils/getAccentColor'
 import type { PropsWithChildren } from 'react'
 import styles from './taskprioretyselector.module.scss'
@@ -18,26 +18,22 @@ const TaskPrioretySelector = ({
   children,
 }: PropsWithChildren<ITaskPrioretySelectorProps>) => {
   return (
-    <Combobox>
-      <Combobox.Trigger asChild>{children}</Combobox.Trigger>
-      <Combobox.Content align='center'>
-        <Combobox.List>
+    <DropdownSelect value={priorety} onSelect={onSelect}>
+      <DropdownSelect.Trigger asChild>{children}</DropdownSelect.Trigger>
+      <DropdownSelect.Content align='center'>
+        <DropdownSelect.List>
           {Object.values(TaskPriorety).map(option => (
-            <Combobox.Item
-              key={option.value}
-              value={option.value}
-              onSelect={() => onSelect(option.value)}
-            >
+            <DropdownSelect.Item key={option.value} value={option.value}>
               <span
                 className={styles.taskPrioretyDot}
                 style={{ backgroundColor: getAccentColor(option.color) }}
               />
               {option.label}
-            </Combobox.Item>
+            </DropdownSelect.Item>
           ))}
-        </Combobox.List>
-      </Combobox.Content>
-    </Combobox>
+        </DropdownSelect.List>
+      </DropdownSelect.Content>
+    </DropdownSelect>
   )
 }
 

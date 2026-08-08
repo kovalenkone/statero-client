@@ -1,3 +1,4 @@
+import { ICON_SIZE } from '@/shared/constants/icon-size.constant'
 import { Button } from '@/shared/ui/Button'
 import { PaperclipIcon } from 'lucide-react'
 import styles from './kanbantaskfooter.module.scss'
@@ -10,7 +11,7 @@ const KanbanTaskFooter = () => {
         variant='ghost'
         className={styles.kanbanTaskFooterButton}
       >
-        <PaperclipIcon size={14} />1
+        <PaperclipIcon size={ICON_SIZE.sm} />
       </Button>
     </div>
   )

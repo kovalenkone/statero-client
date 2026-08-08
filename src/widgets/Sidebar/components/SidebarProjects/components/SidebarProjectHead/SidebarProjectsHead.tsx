@@ -1,3 +1,4 @@
+import { ICON_SIZE } from '@/shared/constants/icon-size.constant'
 import { ActionButton } from '@/shared/ui/ActionButton'
 import { Collapse } from '@/shared/ui/Collapse'
 import { Text } from '@/shared/ui/Text'
@@ -13,7 +14,7 @@ const SidebarProjectsHead = ({ title, onAdd }: ISidebarProjectsHeadProps) => {
   return (
     <div className={styles.sidebarProjectsHead}>
       <Collapse.Trigger className={styles.sidebarProjectsHeadTrigger}>
-        <ChevronDownIcon size={12} />
+        <ChevronDownIcon size={ICON_SIZE.xs} />
         <Text color='muted' fz='sm'>
           {title}
         </Text>
@@ -21,7 +22,7 @@ const SidebarProjectsHead = ({ title, onAdd }: ISidebarProjectsHeadProps) => {
 
       {onAdd && (
         <ActionButton size='xs' onClick={onAdd}>
-          <PlusIcon size={14} />
+          <PlusIcon size={ICON_SIZE.sm} />
         </ActionButton>
       )}
     </div>

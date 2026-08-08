@@ -53,15 +53,16 @@ const BOARDS: IBoard[] = [
   },
 ]
 
-const tasksByBoard: Record<string, ITask[]> = BOARDS.reduce((acc, board) => {
-  acc[board.id] = board.tasks ?? [] // если tasks нет, используем пустой массив
-  return acc
-}, {} as Record<string, ITask[]>)
+const tasksByBoard: Record<string, ITask[]> = BOARDS.reduce(
+  (acc, board) => {
+    acc[board.id] = board.tasks ?? [] // если tasks нет, используем пустой массив
+    return acc
+  },
+  {} as Record<string, ITask[]>,
+)
 
 const KanbanTasks = () => {
   const [boards, setBoards] = useState(tasksByBoard)
-
-  console.log('tasksByBoard', tasksByBoard)
 
   return (
     <div className={styles.kanabTasks}>

@@ -1,10 +1,11 @@
+import type { TAccentColor } from '@/shared/constants/accent-color.constant'
 import clsx from 'clsx'
 import type { PropsWithChildren } from 'react'
 import styles from './bage.module.scss'
 
 interface IBageProps {
   size?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg'
-  variant?: 'blue' | 'violet' | 'orange' | 'green' | 'yellow' | 'grey' | 'white'
+  variant?: TAccentColor
   square?: boolean
   className?: string
 }

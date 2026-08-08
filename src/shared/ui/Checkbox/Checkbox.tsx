@@ -1,3 +1,4 @@
+import { ICON_SIZE } from '@/shared/constants/icon-size.constant'
 import clsx from 'clsx'
 import { CheckIcon } from 'lucide-react'
 import { Checkbox as CheckboxPrimitive } from 'radix-ui'
@@ -34,7 +35,7 @@ const Checkbox = ({
           {...props}
         >
           <CheckboxPrimitive.Indicator className={styles.checkboxIndicator}>
-            <CheckIcon size={14} />
+            <CheckIcon size={ICON_SIZE.sm} />
           </CheckboxPrimitive.Indicator>
         </CheckboxPrimitive.Root>
 

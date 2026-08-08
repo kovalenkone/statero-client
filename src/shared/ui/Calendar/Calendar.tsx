@@ -2,6 +2,7 @@ import {
   AccentColor,
   type TAccentColor,
 } from '@/shared/constants/accent-color.constant'
+import { ICON_SIZE } from '@/shared/constants/icon-size.constant'
 import { formatDate } from '@/shared/libs/dates/formatDate'
 import { getAccentColor } from '@/shared/utils/getAccentColor'
 import { DayPicker, type DayPickerProps } from '@daypicker/react'
@@ -19,6 +20,8 @@ import { ActionButton } from '../ActionButton'
 import { Button } from '../Button'
 import { Text } from '../Text'
 import styles from './calendar.module.scss'
+
+const CALENDAR_ICON_SIZE = ICON_SIZE.md
 
 type TCalendarProps = {
   onPresetSelect?: (date: Date | undefined) => void
@@ -48,12 +51,12 @@ const Calendar = ({ onPresetSelect, ...props }: TCalendarProps) => {
         components={{
           PreviousMonthButton: ({ ...props }) => (
             <ActionButton size='sm' {...props}>
-              <ChevronLeftIcon size={16} />
+              <ChevronLeftIcon size={CALENDAR_ICON_SIZE} />
             </ActionButton>
           ),
           NextMonthButton: ({ ...props }) => (
             <ActionButton size='sm' {...props}>
-              <ChevronRightIcon size={16} />
+              <ChevronRightIcon size={CALENDAR_ICON_SIZE} />
             </ActionButton>
           ),
         }}
@@ -114,7 +117,7 @@ const CalendarPresets = ({ onSelect }: ICalendarPresetProps) => {
           onClick={() => onSelect(preset.date)}
         >
           <preset.icon
-            size={16}
+            size={ICON_SIZE.md}
             style={{ color: getAccentColor(preset.color) }}
           />
           {preset.label}

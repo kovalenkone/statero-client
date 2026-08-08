@@ -1,14 +1,32 @@
+import type { IProject } from '@/entities/project/types/project.type'
+import { ProjectSelector } from '@/shared/components/ProjectSelector'
 import { Bage } from '@/shared/ui/Bage'
 import { Button } from '@/shared/ui/Button'
 
-const KanbanNewTaskProject = () => {
+interface IKanbanNewTaskProjectProps {
+  projects: IProject[]
+  selectedProject: IProject
+  onSelect: (project: IProject) => void
+}
+
+const KanbanNewTaskProject = ({
+  projects,
+  selectedProject,
+  onSelect,
+}: IKanbanNewTaskProjectProps) => {
   return (
-    <Button variant='ghost' size='sm'>
-      <Bage variant='blue' size='xxs' square>
-        S
-      </Bage>{' '}
-      Statera / На тесте
-    </Button>
+    <ProjectSelector
+      projects={projects}
+      selectedProject={selectedProject}
+      onSelect={onSelect}
+    >
+      <Button variant='ghost' size='md'>
+        <Bage variant='blue' size='xs' square>
+          S
+        </Bage>
+        Statera / На тесте
+      </Button>
+    </ProjectSelector>
   )
 }
 
