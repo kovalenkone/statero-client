@@ -14,6 +14,8 @@ export const AppPath = {
   inbox: '/inbox',
 
   tasks: '/tasks',
+  tasksKanban: '/tasks/kanban',
+  tasksTable: '/tasks/table',
   task: (id: string) => `/tasks/:${id}`,
 
   projects: '/projects',

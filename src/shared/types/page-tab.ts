@@ -1,7 +1,7 @@
 import type { LucideIcon } from 'lucide-react'
 
-export interface IPageTab<T> {
+export interface IPageTab {
   icon?: LucideIcon
   label: string
-  value: T
+  path: string
 }

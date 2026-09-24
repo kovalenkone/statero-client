@@ -1,20 +1,18 @@
-.pageTabs {
+.pageTabsList {
   display: flex;
   align-content: center;
   gap: 4px;
   padding: 8px;
   border-bottom: 1px solid var(--border);
 }
-.pageTab {
+.pageTabsLink {
   position: relative;
 
-  & button {
-    color: var(--muted);
+  color: var(--muted);
 
-    &:hover,
-    &:focus-visible {
-      color: var(--primary);
-    }
+  &:hover,
+  &:focus-visible {
+    color: var(--primary);
   }
 
   &::after {
@@ -37,7 +35,7 @@
     visibility: visible;
   }
 
-  &.active button {
+  &.active {
     color: var(--primary);
   }
 }

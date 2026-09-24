@@ -6,6 +6,7 @@ import { verifyMiddleware } from './middlewares/verify.middleware'
 // Layouts
 const AppLayout = lazy(() => import('@/layouts/AppLayout'))
 const AuthLayout = lazy(() => import('@/layouts/AuthLayout'))
+const TasksLayout = lazy(() => import('@/layouts/TasksLayout'))
 
 // Auth Pages
 const LoginPage = lazy(() => import('@/pages/Auth/LoginPage'))
@@ -18,7 +19,10 @@ const ResetPasswordPage = lazy(() => import('@/pages/Auth/ResetPasswordPage'))
 const OverviewPage = lazy(() => import('@/pages/App/OverviewPage'))
 const InboxPage = lazy(() => import('@/pages/App/InboxPage'))
 
-const TasksPage = lazy(() => import('@/pages/App/TasksPage'))
+const TasksKanbanPage = lazy(
+  () => import('@/pages/App/TasksPage/TaskKanbanPage'),
+)
+const TasksTablePage = lazy(() => import('@/pages/App/TasksPage/TaskTablePage'))
 const ProjectsPage = lazy(() => import('@/pages/App/ProjectsPage'))
 
 const ArchivePage = lazy(() => import('@/pages/App/ArchivePage'))
@@ -41,7 +45,21 @@ export const AppRoutes: RouteObject = {
     },
     {
       path: AppPath.tasks,
-      Component: TasksPage,
+      Component: TasksLayout,
+      children: [
+        {
+          index: true,
+          loader: () => redirect(AppPath.tasksKanban),
+        },
+        {
+          path: AppPath.tasksKanban,
+          Component: TasksKanbanPage,
+        },
+        {
+          path: AppPath.tasksTable,
+          Component: TasksTablePage,
+        },
+      ],
     },
     {
       path: AppPath.projects,
