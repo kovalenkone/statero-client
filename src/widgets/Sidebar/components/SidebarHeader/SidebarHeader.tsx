@@ -1,6 +1,5 @@
 import logo from '@/shared/assets/images/statera-logo.svg'
-import { ICON_SIZE } from '@/shared/constants/icon-size.constant'
-import { ActionButton } from '@/shared/ui/ActionButton'
+import { Button } from '@/shared/ui/Button'
 import { MenuIcon } from 'lucide-react'
 import styles from './sidebarheader.module.scss'
 
@@ -15,9 +14,9 @@ const SidebarHeader = ({
 }: ISidebarHeaderProps) => {
   return (
     <div className={styles.sidebarHeader}>
-      <ActionButton onClick={onChangeCollapsed}>
-        <MenuIcon size={ICON_SIZE.xl} />
-      </ActionButton>
+      <Button onClick={onChangeCollapsed} icon variant='ghost'>
+        <MenuIcon />
+      </Button>
       <div className={styles.sidebarHeaderLogo}>
         <img width={20} height={20} src={logo} alt='Statero' />
         Statero

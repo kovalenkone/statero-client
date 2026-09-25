@@ -3,7 +3,6 @@ import {
   type TAccentColor,
 } from '@/entities/accent-color/constants/accent-color.constant'
 import { getAccentColor } from '@/entities/accent-color/utils/getAccentColor'
-import { ICON_SIZE } from '@/shared/constants/icon-size.constant'
 import { formatDate } from '@/shared/libs/dates/formatDate'
 import { DayPicker, type DayPickerProps } from '@daypicker/react'
 import { ru } from '@daypicker/react/locale'
@@ -16,12 +15,9 @@ import {
   ChevronRightIcon,
   type LucideIcon,
 } from 'lucide-react'
-import { ActionButton } from '../ActionButton'
 import { Button } from '../Button'
 import { Text } from '../Text'
 import styles from './calendar.module.scss'
-
-const CALENDAR_ICON_SIZE = ICON_SIZE.md
 
 type TCalendarProps = {
   onPresetSelect?: (date: Date | undefined) => void
@@ -50,14 +46,14 @@ const Calendar = ({ onPresetSelect, ...props }: TCalendarProps) => {
         }}
         components={{
           PreviousMonthButton: ({ ...props }) => (
-            <ActionButton size='sm' {...props}>
-              <ChevronLeftIcon size={CALENDAR_ICON_SIZE} />
-            </ActionButton>
+            <Button size='sm' variant='ghost' icon {...props}>
+              <ChevronLeftIcon />
+            </Button>
           ),
           NextMonthButton: ({ ...props }) => (
-            <ActionButton size='sm' {...props}>
-              <ChevronRightIcon size={CALENDAR_ICON_SIZE} />
-            </ActionButton>
+            <Button size='sm' variant='ghost' icon {...props}>
+              <ChevronRightIcon />
+            </Button>
           ),
         }}
         {...props}
@@ -116,10 +112,7 @@ const CalendarPresets = ({ onSelect }: ICalendarPresetProps) => {
           className={styles.calendarPreset}
           onClick={() => onSelect(preset.date)}
         >
-          <preset.icon
-            size={ICON_SIZE.md}
-            style={{ color: getAccentColor(preset.color) }}
-          />
+          <preset.icon style={{ color: getAccentColor(preset.color) }} />
           {preset.label}
           <Text as='span' color='muted'>
             {preset.day}

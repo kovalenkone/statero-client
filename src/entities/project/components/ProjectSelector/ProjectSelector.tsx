@@ -1,10 +1,10 @@
 import type { IProject } from '@/entities/project/types/project.type'
+import { ICON_SIZE } from '@/shared/constants/icon-size.constant'
 import { Bage } from '@/shared/ui/Bage'
 import { DropdownSelect } from '@/shared/ui/DropdownSelect'
-import { AlignVerticalSpaceAroundIcon } from 'lucide-react'
+import { AlignVerticalSpaceAroundIcon, InboxIcon } from 'lucide-react'
 import { type PropsWithChildren } from 'react'
 import styles from './projectselector.module.scss'
-import { ICON_SIZE } from '@/shared/constants/icon-size.constant'
 
 interface IProjectSelector {
   projects: IProject[]
@@ -44,9 +44,14 @@ const ProjectSelector = ({
                 ]}
                 value={project.id.toString()}
               >
-                <Bage size='xs' square>
-                  S
-                </Bage>
+                {project.isInbox ? (
+                  <InboxIcon size={ICON_SIZE.md} />
+                ) : (
+                  <Bage size='xxs' square>
+                    {project.name[0]}
+                  </Bage>
+                )}
+                {project.isInbox}
                 {project.name}
               </DropdownSelect.Item>
               {project.sections.map(section => (

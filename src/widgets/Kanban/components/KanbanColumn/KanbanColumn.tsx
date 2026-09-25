@@ -1,7 +1,6 @@
 import type { ISection } from '@/entities/section/types/section.type'
-import { ICON_SIZE } from '@/shared/constants/icon-size.constant'
 import { useDisclosure } from '@/shared/hooks/useDisclosure'
-import { ActionButton } from '@/shared/ui/ActionButton'
+import { Button } from '@/shared/ui/Button'
 import { Menu } from '@/shared/ui/Menu'
 import { Text } from '@/shared/ui/Text'
 import { CollisionPriority } from '@dnd-kit/abstract'
@@ -20,8 +19,6 @@ import { type PropsWithChildren } from 'react'
 import { KANBAN_ENTITY } from '../../constants/kanban-entity'
 import { KanbanNewTask } from '../KanbanNewTask'
 import styles from './kanbancolumn.module.scss'
-
-const ACTION_ICON_SIZE = ICON_SIZE.md
 
 interface IKanbanColumnProps {
   index: number
@@ -65,20 +62,27 @@ const KanbanColumn = ({
         </Text>
         <Text color='muted'>{totalTasks}</Text>
         <div className={styles.kanbanColumnActions}>
-          <ActionButton
+          <Button
             size='sm'
+            variant='ghost'
+            icon
             disabled={isNewTaskOpened}
             className={styles.kanbanColumnAddNewTaskBtn}
             onPointerDownCapture={e => e.stopPropagation()}
             onClick={openNewTask}
           >
-            <PlusIcon size={ACTION_ICON_SIZE} />
-          </ActionButton>
+            <PlusIcon />
+          </Button>
           <Menu>
             <Menu.Trigger asChild>
-              <ActionButton size='sm' className={styles.kanbanColumnMenu}>
-                <EllipsisIcon size={ACTION_ICON_SIZE} />
-              </ActionButton>
+              <Button
+                size='sm'
+                variant='ghost'
+                icon
+                className={styles.kanbanColumnMenu}
+              >
+                <EllipsisIcon />
+              </Button>
             </Menu.Trigger>
             <Menu.Content align='center'>
               <Menu.Item>

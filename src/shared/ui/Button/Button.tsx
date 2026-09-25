@@ -5,9 +5,11 @@ import { Spinner } from '../Spinner'
 import styles from './button.module.scss'
 
 interface IButtonProps extends ComponentProps<'button'> {
-  size?: 'sm' | 'md' | 'lg' | 'xl'
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
   variant?: 'primary' | 'secondary' | 'ghost' | 'outline' | 'danger'
+  icon?: boolean
   stretch?: boolean
+  centered?: boolean
   loading?: boolean
   asChild?: boolean
 }
@@ -15,6 +17,8 @@ interface IButtonProps extends ComponentProps<'button'> {
 const Button = ({
   size = 'lg',
   variant = 'primary',
+  icon,
+  centered,
   asChild,
   stretch,
   loading,
@@ -29,7 +33,11 @@ const Button = ({
     styles.button,
     styles[`${variant}Button`],
     styles[`${size}Button`],
-    { [styles.stretchButton]: stretch },
+    {
+      [styles.stretchButton]: stretch,
+      [styles.iconButton]: icon,
+      [styles.centeredButton]: centered,
+    },
     className,
   )
 

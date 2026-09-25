@@ -1,5 +1,4 @@
-import { ICON_SIZE } from '@/shared/constants/icon-size.constant'
-import { ActionButton } from '@/shared/ui/ActionButton'
+import { Button } from '@/shared/ui/Button'
 import { Menu } from '@/shared/ui/Menu'
 import { TaskCompletion } from '@/shared/ui/TaskCompletion'
 import { Text } from '@/shared/ui/Text'
@@ -28,13 +27,15 @@ const KanbanTaskHead = ({ title, completed }: IKanbanTaskHeadProps) => {
         <Text className={styles.kanabTaskHeadName}>{title}</Text>
         <Menu>
           <Menu.Trigger asChild>
-            <ActionButton
+            <Button
               size='sm'
+              variant='ghost'
+              icon
               className={styles.kanbanTaskHeadActions}
               data-kanban-task-actions
             >
-              <EllipsisIcon size={ICON_SIZE.md} />
-            </ActionButton>
+              <EllipsisIcon />
+            </Button>
           </Menu.Trigger>
           <Menu.Content align='center'>
             <Menu.Item>

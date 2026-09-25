@@ -1,9 +1,9 @@
+import { AccentColorSelector } from '@/entities/accent-color/components/AccentColorSelector'
+import type { TAccentColor } from '@/entities/accent-color/constants/accent-color.constant'
 import type { ITag } from '@/entities/tag/types/tag.type'
-import { ICON_SIZE } from '@/shared/constants/icon-size.constant'
 import { Bage } from '@/shared/ui/Bage'
 import { Button } from '@/shared/ui/Button'
 import { DropdownSelect } from '@/shared/ui/DropdownSelect'
-import { Popover } from '@/shared/ui/Popover'
 import { Text } from '@/shared/ui/Text'
 import { PlusIcon } from 'lucide-react'
 import { useState, type PropsWithChildren } from 'react'
@@ -13,12 +13,14 @@ interface ITagsSelectorProps {
   tags: ITag[]
   selectedTagsIds: string[]
   onSelect: (tagId: string) => void
+  onCreate: (tagName: string, tagColor: TAccentColor) => void
 }
 
 const TagsSelector = ({
   tags,
   selectedTagsIds,
   onSelect,
+  onCreate,
   children,
 }: PropsWithChildren<ITagsSelectorProps>) => {
   const [searchValue, setSearchValue] = useState('')
@@ -49,27 +51,19 @@ const TagsSelector = ({
           ))}
         </DropdownSelect.List>
         {searchValue && !alreadyExists && (
-          <Popover>
-            <Popover.Trigger asChild>
-              <Button
-                size='md'
-                variant='ghost'
-                stretch
-                className={styles.addNewTagButton}
-              >
-                <PlusIcon size={ICON_SIZE.md} />
-                <span>
-                  Добавить: <Text as='span'>{searchValue}</Text>
-                </span>
-              </Button>
-            </Popover.Trigger>
-            <Popover.Content>
-              <button>Red</button>
-              <button>Red</button>
-              <button>Red</button>
-              <button>Red</button>
-            </Popover.Content>
-          </Popover>
+          <AccentColorSelector onSelect={color => onCreate(searchValue, color)}>
+            <Button
+              size='md'
+              variant='ghost'
+              stretch
+              className={styles.addNewTagButton}
+            >
+              <PlusIcon />
+              <span>
+                Добавить: <Text as='span'>{searchValue}</Text>
+              </span>
+            </Button>
+          </AccentColorSelector>
         )}
       </DropdownSelect.Content>
     </DropdownSelect>

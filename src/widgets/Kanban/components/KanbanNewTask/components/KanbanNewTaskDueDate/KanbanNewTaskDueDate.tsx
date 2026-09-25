@@ -1,12 +1,8 @@
 import { getAccentColor } from '@/entities/accent-color/utils/getAccentColor'
 import { DueDatePicker } from '@/shared/components/DueDatePicker'
-import { ICON_SIZE } from '@/shared/constants/icon-size.constant'
 import { getDueDate } from '@/shared/libs/dates/getDueDate'
-import { ActionButton } from '@/shared/ui/ActionButton'
 import { Button } from '@/shared/ui/Button'
 import { CalendarDaysIcon } from 'lucide-react'
-
-const DATE_ICON_SIZE = ICON_SIZE.md
 
 interface IKanbanNewTaskDueDateProps {
   date: Date | undefined
@@ -21,19 +17,10 @@ const KanbanNewTaskDueDate = ({
 
   return (
     <DueDatePicker date={date} onSelect={onSelect}>
-      {dueDate ? (
-        <Button variant='ghost' size='md'>
-          <CalendarDaysIcon
-            size={DATE_ICON_SIZE}
-            style={{ color: getAccentColor(dueDate.color) }}
-          />
-          {dueDate.label}
-        </Button>
-      ) : (
-        <ActionButton size='sm'>
-          <CalendarDaysIcon size={DATE_ICON_SIZE} />
-        </ActionButton>
-      )}
+      <Button variant='ghost' size='md' icon={!dueDate}>
+        <CalendarDaysIcon style={{ color: getAccentColor(dueDate?.color) }} />
+        {dueDate?.label}
+      </Button>
     </DueDatePicker>
   )
 }

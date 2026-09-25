@@ -3,6 +3,15 @@ import type { IProject } from './types/project.type'
 
 export const PROJECTS: IProject[] = [
   {
+    id: '0',
+    name: 'Входящие',
+    description: '',
+    color: AccentColor.Blue,
+    icon: '',
+    sections: [],
+    isInbox: true,
+  },
+  {
     id: '1',
     name: 'Statera',
     description: '',

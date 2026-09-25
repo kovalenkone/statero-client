@@ -1,5 +1,5 @@
-import { ActionButton } from '@/shared/ui/ActionButton'
 import { Bage } from '@/shared/ui/Bage'
+import { Button } from '@/shared/ui/Button'
 import { Menu } from '@/shared/ui/Menu'
 import {
   ArchiveIcon,
@@ -11,7 +11,6 @@ import {
 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import styles from './sidebarprojectslistitem.module.scss'
-import { ICON_SIZE } from '@/shared/constants/icon-size.constant'
 
 const SidebarProjectsListItem = () => {
   return (
@@ -28,9 +27,14 @@ const SidebarProjectsListItem = () => {
       </Link>
       <Menu>
         <Menu.Trigger asChild>
-          <ActionButton size='xs' className={styles.sidebarProjectButton}>
-            <EllipsisIcon size={ICON_SIZE.sm} />
-          </ActionButton>
+          <Button
+            size='xs'
+            icon
+            variant='ghost'
+            className={styles.sidebarProjectButton}
+          >
+            <EllipsisIcon />
+          </Button>
         </Menu.Trigger>
         <Menu.Content>
           <Menu.Item>

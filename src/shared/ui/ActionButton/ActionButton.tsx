@@ -6,6 +6,7 @@ import styles from './actionbutton.module.scss'
 interface IActionButtonProps extends ComponentProps<'button'> {
   size?: 'xs' | 'sm' | 'md' | 'lg'
   variant?: 'primary' | 'secondary' | 'ghost' | 'outline' | 'danger'
+  icon?: boolean
   loading?: boolean
   asChild?: boolean
 }
@@ -13,6 +14,7 @@ interface IActionButtonProps extends ComponentProps<'button'> {
 const ActionButton = ({
   size = 'lg',
   variant = 'ghost',
+  icon,
   loading,
   asChild,
   className,
@@ -25,6 +27,7 @@ const ActionButton = ({
     styles.actionButton,
     styles[`${variant}ActionButton`],
     styles[`${size}ActionButton`],
+    { [styles.iconButton]: icon },
     className,
   )
 

@@ -1,5 +1,5 @@
 import { ICON_SIZE } from '@/shared/constants/icon-size.constant'
-import { ActionButton } from '@/shared/ui/ActionButton'
+import { Button } from '@/shared/ui/Button'
 import { Collapse } from '@/shared/ui/Collapse'
 import { Text } from '@/shared/ui/Text'
 import { ChevronDownIcon, PlusIcon } from 'lucide-react'
@@ -21,9 +21,9 @@ const SidebarProjectsHead = ({ title, onAdd }: ISidebarProjectsHeadProps) => {
       </Collapse.Trigger>
 
       {onAdd && (
-        <ActionButton size='xs' onClick={onAdd}>
-          <PlusIcon size={ICON_SIZE.sm} />
-        </ActionButton>
+        <Button size='xs' icon onClick={onAdd} variant='ghost'>
+          <PlusIcon />
+        </Button>
       )}
     </div>
   )

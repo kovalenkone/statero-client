@@ -1,4 +1,3 @@
-import { ICON_SIZE } from '@/shared/constants/icon-size.constant'
 import { usePathMatch } from '@/shared/hooks/usePathMatch'
 import type { IPageTab } from '@/shared/types/page-tab'
 import clsx from 'clsx'
@@ -32,7 +31,7 @@ const PageTabItem = ({ tab }: { tab: IPageTab }) => {
           to={tab.path}
           className={clsx(styles.pageTabsLink, { [styles.active]: !!match })}
         >
-          {tab.icon && <tab.icon size={ICON_SIZE.md} />}
+          {tab.icon && <tab.icon />}
           {tab.label}
         </Link>
       </Button>

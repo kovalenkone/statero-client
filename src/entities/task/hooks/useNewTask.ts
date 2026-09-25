@@ -33,10 +33,6 @@ export const useNewTask = ({ project, dueDate }: IUseNewTaskProps) => {
     key: K,
   ) => {
     if (isTagsKey(key, payload)) {
-      console.log(
-        'arraynew',
-        changeArray(newTaskData.tags).update(payload, t => t),
-      )
       setNewTaskData(
         changeArray(newTaskData.tags).update(payload, t => t),
         'tags',

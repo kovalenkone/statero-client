@@ -8,4 +8,5 @@ export interface IProject {
   color: TAccentColor
   icon: string
   sections: ISection[]
+  isInbox?: boolean
 }

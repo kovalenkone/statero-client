@@ -1,9 +1,9 @@
+// common
 .button {
   display: flex;
   align-items: center;
-  justify-content: center;
   font-weight: 500;
-  transition: var(--transition-15);
+  transition: background var(--transition-15);
 
   &:disabled {
     opacity: 0.5;
@@ -14,36 +14,110 @@
     flex-shrink: 0;
   }
 }
+.stretchButton {
+  width: 100%;
+}
+.centeredButton,
+.iconButton {
+  justify-content: center;
+}
 
+// size
+.xsButton {
+  height: 20px;
+  border-radius: var(--rounded-sm);
+
+  &:not(.iconButton) {
+    padding-inline: 4px;
+  }
+
+  &.iconButton {
+    width: 20px;
+  }
+
+  & svg {
+    width: 14px;
+    height: 14px;
+  }
+}
 .smButton {
   gap: 4px;
   height: 24px;
-  padding-inline: 4px;
-  border-radius: var(--rounded-sm);
+  border-radius: var(--rounded-md);
   font-size: var(--fz-sm);
+
+  &:not(.iconButton) {
+    padding-inline: 6px;
+  }
+
+  &.iconButton {
+    width: 24px;
+  }
+
+  & svg {
+    width: 14px;
+    height: 14px;
+  }
 }
 .mdButton {
-  gap: 8px;
+  gap: 6px;
   height: 28px;
-  padding-inline: 8px;
   border-radius: var(--rounded-md);
   font-size: var(--fz-md);
+
+  &:not(.iconButton) {
+    padding-inline: 6px;
+  }
+
+  &.iconButton {
+    width: 28px;
+  }
+
+  & svg {
+    width: 16px;
+    height: 16px;
+  }
 }
 .lgButton {
-  gap: 12px;
+  gap: 6px;
   height: 32px;
-  padding-inline: 12px;
   border-radius: var(--rounded-md);
   font-size: var(--fz-md);
+
+  &:not(.iconButton) {
+    padding-inline: 8px;
+  }
+
+  &.iconButton {
+    width: 32px;
+  }
+
+  & svg {
+    width: 16px;
+    height: 16px;
+  }
 }
 .xlButton {
-  gap: 12px;
+  gap: 6px;
   height: 36px;
-  padding-inline: 12px;
   border-radius: var(--rounded-lg);
   font-size: var(--fz-md);
+
+  &:not(.iconButton) {
+    padding-inline: 10px;
+  }
+
+  &.iconButton {
+    width: 36px;
+  }
+
+  & svg {
+    width: 18px;
+    height: 18px;
+  }
 }
 
+// variant
 .primaryButton {
   background-color: var(--primary);
   color: var(--foreground-secondary);
@@ -59,6 +133,13 @@
 .ghostButton {
   &:hover {
     background-color: var(--secondary);
+  }
+
+  &[data-state='open'][aria-haspopup='menu'] {
+    background-color: var(--secondary);
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
   }
 }
 .outlineButton {
@@ -76,8 +157,4 @@
   &:focus-visible {
     background-color: var(--danger-background-muted);
   }
-}
-
-.stretchButton {
-  width: 100%;
 }

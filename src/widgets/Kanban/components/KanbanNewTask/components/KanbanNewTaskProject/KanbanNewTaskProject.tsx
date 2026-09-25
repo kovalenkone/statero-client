@@ -21,7 +21,7 @@ const KanbanNewTaskProject = ({
       onSelect={onSelect}
     >
       <Button variant='ghost' size='md'>
-        <Bage variant='blue' size='xs' square>
+        <Bage variant='blue' size='xxs' square>
           S
         </Bage>
         Statera / На тесте

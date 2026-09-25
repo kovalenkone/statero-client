@@ -1,9 +1,8 @@
 import { PROJECTS } from '@/entities/project/projects.data'
 import type { IProject } from '@/entities/project/types/project.type'
 import { useNewTask } from '@/entities/task/hooks/useNewTask'
-import { ICON_SIZE } from '@/shared/constants/icon-size.constant'
 import { useDisclosure } from '@/shared/hooks/useDisclosure'
-import { ActionButton } from '@/shared/ui/ActionButton'
+import { Button } from '@/shared/ui/Button'
 import { ConfirmDialog } from '@/shared/ui/ConfirmDialog'
 import { Textarea } from '@/shared/ui/Textarea'
 import { SendHorizonalIcon, XIcon } from 'lucide-react'
@@ -81,16 +80,17 @@ const KanbanNewTask = ({ onClose, onSubmit }: IKanbanNewTaskProps) => {
             />
 
             <div className={styles.kanbanNewTaskActions}>
-              <ActionButton
+              <Button
                 variant='danger'
                 size='md'
+                icon
                 onClick={handleCloseNewTask}
               >
-                <XIcon size={ICON_SIZE.lg} />
-              </ActionButton>
-              <ActionButton variant='secondary' size='md'>
-                <SendHorizonalIcon size={ICON_SIZE.md} />
-              </ActionButton>
+                <XIcon />
+              </Button>
+              <Button variant='secondary' size='md' icon>
+                <SendHorizonalIcon />
+              </Button>
             </div>
           </div>
         </div>
