@@ -1,4 +1,4 @@
-import { AppLoader } from '@/shared/components/AppLoader'
+import { AppLoader } from '@/shared/ui/AppLoader'
 import { Sonner } from '@/shared/ui/Sonner'
 import { Suspense } from 'react'
 import { RouterProvider } from 'react-router-dom'

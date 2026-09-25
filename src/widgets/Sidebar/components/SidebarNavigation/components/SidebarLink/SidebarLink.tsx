@@ -1,7 +1,8 @@
 import { ICON_SIZE } from '@/shared/constants/icon-size.constant'
+import { usePathMatch } from '@/shared/hooks/usePathMatch'
 import type { ILink } from '@/shared/types/link.type'
 import clsx from 'clsx'
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import styles from './sidebarlink.module.scss'
 
 interface ISidebarLink {
@@ -9,18 +10,16 @@ interface ISidebarLink {
 }
 
 const SidebarLink = ({ link }: ISidebarLink) => {
-  const Icon = link.icon
-
-  const { pathname } = useLocation()
+  const match = usePathMatch({ path: link.href })
 
   return (
     <Link
       to={link.href}
       className={clsx(styles.sidebarLink, {
-        [styles.active]: pathname === link.href,
+        [styles.active]: match,
       })}
     >
-      {Icon && <Icon size={ICON_SIZE.md} />}
+      {link.icon && <link.icon size={ICON_SIZE.md} />}
       {link.label}
     </Link>
   )

@@ -1,6 +1,6 @@
-import { AuthCard } from '@/shared/components/AuthCard'
 import { AppPath } from '@/shared/configs/app-path'
 import { Anchor } from '@/shared/ui/Anchor'
+import { AuthCard } from '@/shared/ui/AuthCard'
 import { Input } from '@/shared/ui/Input'
 import { PasswordInput } from '@/shared/ui/PasswordInput'
 import { useLogin } from '../../hooks/useLogin'

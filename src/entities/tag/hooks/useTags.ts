@@ -1,4 +1,7 @@
-import { AccentColor } from '@/shared/constants/accent-color.constant'
+import {
+  AccentColor,
+  type TAccentColor,
+} from '@/entities/accent-color/constants/accent-color.constant'
 import { toMap } from '@/shared/utils/toMap'
 import { useMemo, useState } from 'react'
 import type { ITag } from '../types/tag.type'
@@ -24,14 +27,20 @@ const TAGS: ITag[] = [
 interface IUseTagsReturn {
   tags: ITag[]
   tagsMap: Record<string, ITag>
+  createTag: (name: string, color: TAccentColor) => void
+  removeTag: (id: string) => void
 }
 
 export const useTags = (): IUseTagsReturn => {
   const [tags, setTags] = useState<ITag[]>(TAGS)
 
+  const createTag = (name: string, color: TAccentColor) => {}
+
+  const removeTag = (id: string) => {}
+
   const tagsMap = useMemo(() => {
     return toMap(TAGS, tag => tag.id)
   }, [])
 
-  return { tags, tagsMap }
+  return { tags, tagsMap, createTag, removeTag }
 }

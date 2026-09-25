@@ -1,5 +1,5 @@
+import type { TAccentColor } from '@/entities/accent-color/constants/accent-color.constant'
 import type { ISection } from '@/entities/section/types/section.type'
-import type { TAccentColor } from '@/shared/constants/accent-color.constant'
 
 export interface IProject {
   id: string

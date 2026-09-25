@@ -1,8 +1,8 @@
-import { PageHead } from '@/shared/components/PageHead'
 import { PageTabs } from '@/shared/ui/PageTabs'
 import { Outlet } from 'react-router-dom'
 import { PageLayout } from '../PageLayout'
 import { TASK_PAGE_TABS } from './constants/taks-page-tabs.constant'
+import { PageHead } from '@/shared/ui/PageHead'
 
 const TasksLayout = () => {
   return (

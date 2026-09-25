@@ -1,5 +1,5 @@
+import { TagsSelector } from '@/entities/tag/components/TagsSelector'
 import { useTags } from '@/entities/tag/hooks/useTags'
-import { TagsSelector } from '@/shared/components/TagsSelector'
 import { ICON_SIZE } from '@/shared/constants/icon-size.constant'
 import { ActionButton } from '@/shared/ui/ActionButton'
 import { Bage } from '@/shared/ui/Bage'
@@ -18,8 +18,6 @@ const KanbanNewTaskTags = ({
   onSelect,
 }: IKanbanNewTaskTagsProps) => {
   const { tags, tagsMap } = useTags()
-
-  console.log('tagsMap', tagsMap)
 
   return (
     <TagsSelector

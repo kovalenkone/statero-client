@@ -9,6 +9,10 @@
     opacity: 0.5;
     cursor: default;
   }
+
+  & svg {
+    flex-shrink: 0;
+  }
 }
 
 .smButton {

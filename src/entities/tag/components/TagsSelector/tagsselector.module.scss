@@ -1,0 +1,12 @@
+.addNewTagButton {
+  color: var(--muted);
+  justify-content: flex-start;
+  max-width: 100%;
+  overflow: hidden;
+
+  & span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

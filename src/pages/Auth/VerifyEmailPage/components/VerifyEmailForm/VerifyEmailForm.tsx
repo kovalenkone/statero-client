@@ -1,4 +1,4 @@
-import { AuthCard } from '@/shared/components/AuthCard'
+import { AuthCard } from '@/shared/ui/AuthCard'
 import { OTPInput } from '@/shared/ui/OTPInput'
 import { Text } from '@/shared/ui/Text'
 import { useVerifyEmail } from '../../hooks/useVerifyEmail'

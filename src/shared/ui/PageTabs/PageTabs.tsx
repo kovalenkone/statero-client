@@ -1,7 +1,8 @@
 import { ICON_SIZE } from '@/shared/constants/icon-size.constant'
+import { usePathMatch } from '@/shared/hooks/usePathMatch'
 import type { IPageTab } from '@/shared/types/page-tab'
 import clsx from 'clsx'
-import { Link, useMatch, useResolvedPath } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Button } from '../Button'
 import styles from './pagetabs.module.scss'
 
@@ -22,8 +23,7 @@ const PageTabs = ({ tabs }: IPageTabsProps) => {
 }
 
 const PageTabItem = ({ tab }: { tab: IPageTab }) => {
-  const resolved = useResolvedPath(tab.path)
-  const match = useMatch({ path: resolved.pathname, end: true })
+  const match = usePathMatch({ path: tab.path, end: true })
 
   return (
     <li className={styles.pageTabsItem}>

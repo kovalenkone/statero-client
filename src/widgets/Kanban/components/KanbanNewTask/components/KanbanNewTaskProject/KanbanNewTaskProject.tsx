@@ -1,5 +1,5 @@
+import { ProjectSelector } from '@/entities/project/components/ProjectSelector'
 import type { IProject } from '@/entities/project/types/project.type'
-import { ProjectSelector } from '@/shared/components/ProjectSelector'
 import { Bage } from '@/shared/ui/Bage'
 import { Button } from '@/shared/ui/Button'
 

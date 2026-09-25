@@ -1,9 +1,9 @@
+import { getAccentColor } from '@/entities/accent-color/utils/getAccentColor'
 import {
   TaskPriorety,
   type TTaskPriorety,
 } from '@/entities/task/constants/task-priorety.constant'
 import { DropdownSelect } from '@/shared/ui/DropdownSelect'
-import { getAccentColor } from '@/shared/utils/getAccentColor'
 import type { PropsWithChildren } from 'react'
 import styles from './taskprioretyselector.module.scss'
 

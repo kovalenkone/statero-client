@@ -1,6 +1,5 @@
 import { PageLayout } from '@/layouts/PageLayout'
-import { PageHead } from '@/shared/components/PageHead'
-import { Kanban } from '@/widgets/Kanban'
+import { PageHead } from '@/shared/ui/PageHead'
 
 const ProjectsPage = () => {
   return (
@@ -9,7 +8,6 @@ const ProjectsPage = () => {
         title='Все проекты'
         descr='Организуйте задачи по проектам и держите работу под контролем'
       />
-      <Kanban />
     </PageLayout>
   )
 }

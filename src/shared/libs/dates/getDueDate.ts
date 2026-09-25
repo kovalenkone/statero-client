@@ -1,7 +1,7 @@
 import {
   AccentColor,
   type TAccentColor,
-} from '@/shared/constants/accent-color.constant'
+} from '@/entities/accent-color/constants/accent-color.constant'
 import dayjs from 'dayjs'
 import { formatDate } from './formatDate'
 

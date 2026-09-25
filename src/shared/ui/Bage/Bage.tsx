@@ -1,4 +1,4 @@
-import type { TAccentColor } from '@/shared/constants/accent-color.constant'
+import type { TAccentColor } from '@/entities/accent-color/constants/accent-color.constant'
 import clsx from 'clsx'
 import type { PropsWithChildren } from 'react'
 import styles from './bage.module.scss'

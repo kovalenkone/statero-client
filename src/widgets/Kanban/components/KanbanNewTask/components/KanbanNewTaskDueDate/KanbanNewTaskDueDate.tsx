@@ -1,9 +1,9 @@
+import { getAccentColor } from '@/entities/accent-color/utils/getAccentColor'
 import { DueDatePicker } from '@/shared/components/DueDatePicker'
 import { ICON_SIZE } from '@/shared/constants/icon-size.constant'
 import { getDueDate } from '@/shared/libs/dates/getDueDate'
 import { ActionButton } from '@/shared/ui/ActionButton'
 import { Button } from '@/shared/ui/Button'
-import { getAccentColor } from '@/shared/utils/getAccentColor'
 import { CalendarDaysIcon } from 'lucide-react'
 
 const DATE_ICON_SIZE = ICON_SIZE.md

@@ -17,6 +17,8 @@ type TDropdownSelectContext<T extends string> =
   | {
       multiple: true
       searchable: boolean
+      searchValue?: string
+      onSearchValueChange?: (value: string) => void
       selectedValue: T[]
       onSelect: (value: T) => void
       close: () => void
@@ -24,6 +26,8 @@ type TDropdownSelectContext<T extends string> =
   | {
       multiple: false
       searchable: boolean
+      searchValue?: string
+      onSearchValueChange?: (value: string) => void
       selectedValue: T | null
       onSelect: (value: T) => void
       close: () => void
@@ -44,12 +48,16 @@ const useDropdownSelectContext = <T extends string>() => {
 
 type TDropdownSelectProps<T extends string> = {
   searchable?: boolean
+  searchValue?: string
+  onSearchValueChange?: (value: string) => void
   value: T | T[]
   onSelect: (value: T) => void
 } & ComponentProps<typeof Popover>
 
 const DropdownSelect = <T extends string>({
   searchable = false,
+  searchValue,
+  onSearchValueChange,
   value,
   open,
   defaultOpen,
@@ -72,6 +80,8 @@ const DropdownSelect = <T extends string>({
     ? {
         multiple: true as const,
         searchable,
+        searchValue,
+        onSearchValueChange,
         selectedValue: value as T[],
         onSelect,
         close: () => setOpen(false),
@@ -79,6 +89,7 @@ const DropdownSelect = <T extends string>({
     : {
         multiple: false as const,
         searchable,
+        searchValue,
         selectedValue: value as T | null,
         onSelect,
         close: () => setOpen(false),
@@ -109,7 +120,8 @@ const DropdownSelectList = ({
   children,
   ...props
 }: PropsWithChildren<ComponentProps<typeof Command>>) => {
-  const { searchable } = useDropdownSelectContext()
+  const { searchable, searchValue, onSearchValueChange } =
+    useDropdownSelectContext()
 
   return (
     <Command
@@ -126,7 +138,12 @@ const DropdownSelectList = ({
     >
       {searchable && (
         <Command.Input asChild className={styles.dropdownSelectSearch}>
-          <Input size='sm' placeholder='Поиск...' />
+          <Input
+            value={searchValue}
+            onChange={e => onSearchValueChange?.(e.target.value)}
+            size='sm'
+            placeholder='Поиск...'
+          />
         </Command.Input>
       )}
       <Command.List className={styles.dropdownSelectList}>

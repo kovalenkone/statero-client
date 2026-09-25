@@ -1,10 +1,10 @@
 import {
   AccentColor,
   type TAccentColor,
-} from '@/shared/constants/accent-color.constant'
+} from '@/entities/accent-color/constants/accent-color.constant'
+import { getAccentColor } from '@/entities/accent-color/utils/getAccentColor'
 import { ICON_SIZE } from '@/shared/constants/icon-size.constant'
 import { formatDate } from '@/shared/libs/dates/formatDate'
-import { getAccentColor } from '@/shared/utils/getAccentColor'
 import { DayPicker, type DayPickerProps } from '@daypicker/react'
 import { ru } from '@daypicker/react/locale'
 import dayjs from 'dayjs'

@@ -1,4 +1,4 @@
-import { AuthCard } from '@/shared/components/AuthCard'
+import { AuthCard } from '@/shared/ui/AuthCard'
 import { RegisterForm } from './components/RegisterForm'
 
 const RegisterPage = () => {

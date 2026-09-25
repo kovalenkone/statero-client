@@ -1,9 +1,9 @@
-import { AccentColor } from '@/shared/constants/accent-color.constant'
+import { AccentColor } from '../accent-color/constants/accent-color.constant'
 import type { IProject } from './types/project.type'
 
 export const PROJECTS: IProject[] = [
   {
-    id: 1,
+    id: '1',
     name: 'Statera',
     description: '',
     color: AccentColor.Blue,
@@ -27,7 +27,7 @@ export const PROJECTS: IProject[] = [
     ],
   },
   {
-    id: 2,
+    id: '2',
     name: 'Проект 1',
     description: '',
     color: AccentColor.Orange,

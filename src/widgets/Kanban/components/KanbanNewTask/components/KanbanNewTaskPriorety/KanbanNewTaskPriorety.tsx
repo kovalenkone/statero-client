@@ -1,11 +1,11 @@
+import { getAccentColor } from '@/entities/accent-color/utils/getAccentColor'
+import { TaskPrioretySelector } from '@/entities/task/components/TaskPrioretySelector'
 import {
   TaskPriorety,
   type TTaskPriorety,
 } from '@/entities/task/constants/task-priorety.constant'
-import { TaskPrioretySelector } from '@/shared/components/TaskPrioretySelector'
 import { ActionButton } from '@/shared/ui/ActionButton'
 import { Button } from '@/shared/ui/Button'
-import { getAccentColor } from '@/shared/utils/getAccentColor'
 import { CircleAlertIcon } from 'lucide-react'
 
 const PRIORITY_ICON_SIZE = 16

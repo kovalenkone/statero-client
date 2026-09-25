@@ -1,6 +1,6 @@
-import { ConfirmDialog } from '@/shared/components/ConfirmDialog'
 import { useDisclosure } from '@/shared/hooks/useDisclosure'
 import { Avatar } from '@/shared/ui/Avatar'
+import { ConfirmDialog } from '@/shared/ui/ConfirmDialog'
 import { Menu } from '@/shared/ui/Menu'
 import { Text } from '@/shared/ui/Text'
 import {

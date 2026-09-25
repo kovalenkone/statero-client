@@ -1,4 +1,4 @@
-import { AuthCard } from '@/shared/components/AuthCard'
+import { AuthCard } from '@/shared/ui/AuthCard'
 import { VerifyEmailForm } from './components/VerifyEmailForm'
 
 const VerifyEmailPage = () => {
